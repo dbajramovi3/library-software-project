@@ -2,8 +2,6 @@ package ba.unsa.etf.rpr;
 
 import ba.unsa.etf.rpr.domain.Books;
 
-import java.util.ArrayList;
-import java.util.List;
 /**
  * Hello world!
  * comment by dbajramovi3
