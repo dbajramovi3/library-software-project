@@ -1,4 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-public interface Shopping_CartDao extends Dao{
+import ba.unsa.etf.rpr.domain.Shopping_cart;
+
+public interface Shopping_CartDao extends Dao<Shopping_cart> {
 }

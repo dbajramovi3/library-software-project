@@ -4,7 +4,7 @@ import ba.unsa.etf.rpr.domain.Books;
 import java.util.List;
 import java.sql.SQLException;
 
-public interface Dao {
+public interface Dao<B> {
     Books get(int id) throws SQLException;
 
     List<Books> getall() throws SQLException;

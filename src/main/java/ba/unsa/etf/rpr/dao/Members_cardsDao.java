@@ -1,4 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-public interface Members_cardsDao extends Dao{
+import ba.unsa.etf.rpr.domain.Member_cards;
+
+public interface Members_cardsDao extends Dao<Member_cards> {
 }
