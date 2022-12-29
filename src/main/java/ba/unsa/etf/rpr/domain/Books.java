@@ -1,13 +1,15 @@
 package ba.unsa.etf.rpr.domain;
 
-public class books {
+import java.util.Objects;
+
+public class Books {
     private int id;
     private String title;
     private String author;
     private int total_book_count;
     private int current_book_hold;
 
-    public books(int id, String title, String author, int total_book_count, int current_book_hold) {
+    public Books(int id, String title, String author, int total_book_count, int current_book_hold) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -64,5 +66,18 @@ public class books {
                 ", total_book_count=" + total_book_count +
                 ", current_book_hold=" + current_book_hold +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Books)) return false;
+        Books books = (Books) o;
+        return getId() == books.getId() && getTotal_book_count() == books.getTotal_book_count() && getCurrent_book_hold() == books.getCurrent_book_hold() && Objects.equals(getTitle(), books.getTitle()) && Objects.equals(getAuthor(), books.getAuthor());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getTitle(), getAuthor(), getTotal_book_count(), getCurrent_book_hold());
     }
 }
