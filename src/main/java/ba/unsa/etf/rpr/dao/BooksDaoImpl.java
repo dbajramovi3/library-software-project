@@ -22,7 +22,7 @@ public class BooksDaoImpl implements BooksDao {
     }
 
     @Override
-    public int get(Books book) throws SQLException {
+    public int add(Books book) throws SQLException {
         return 0;
     }
 
@@ -32,7 +32,7 @@ public class BooksDaoImpl implements BooksDao {
     }
 
     @Override
-    public int delete(Books book) {
-        return 0;
+    public void delete(Books book) {
+
     }
 }

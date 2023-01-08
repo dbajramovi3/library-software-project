@@ -22,7 +22,7 @@ public class MembersDaoImpl implements MembersDao{
     }
 
     @Override
-    public int get(Members members) throws SQLException {
+    public int add(Members members) throws SQLException {
         return 0;
     }
 
@@ -32,7 +32,7 @@ public class MembersDaoImpl implements MembersDao{
     }
 
     @Override
-    public int delete(Members members) {
-        return 0;
+    public void delete(Members members) {
+
     }
 }

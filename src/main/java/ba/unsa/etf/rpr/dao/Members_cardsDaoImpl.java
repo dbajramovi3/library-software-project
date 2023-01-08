@@ -22,7 +22,7 @@ public class Members_cardsDaoImpl implements Members_cardsDao{
     }
 
     @Override
-    public int get(Member_cards member_cards) throws SQLException {
+    public int add(Member_cards member_cards) throws SQLException {
         return 0;
     }
 
@@ -32,7 +32,7 @@ public class Members_cardsDaoImpl implements Members_cardsDao{
     }
 
     @Override
-    public int delete(Member_cards member_cards) {
-        return 0;
+    public void delete(Member_cards member_cards) {
+
     }
 }

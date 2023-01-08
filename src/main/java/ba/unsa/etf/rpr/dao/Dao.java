@@ -5,7 +5,7 @@ import java.sql.SQLException;
 public interface Dao<T> {
 
     /**
-     * get one entity from database base on id
+     * add one entity from database base on id
      * @return Entity from database
      */
     T getById(int id) throws SQLException;
@@ -20,17 +20,17 @@ public interface Dao<T> {
      * Saves entity into database
      * @return saved item with id field populated
      */
-    int get(T t) throws SQLException;
+    int add(T item) throws SQLException;
 
     /**
      * Fully updates entity in database based on id (primary) match.
      * @return updated version of bean
      */
-    int update(T t) throws SQLException;
+    int update(T item) throws SQLException;
 
     /**
      * Delete of item from database with given id
      */
-    int delete(T t) throws SQLException;
+    void delete(T t) throws SQLException;
 }
 

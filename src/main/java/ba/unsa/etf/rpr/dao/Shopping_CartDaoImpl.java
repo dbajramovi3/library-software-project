@@ -22,7 +22,7 @@ public class Shopping_CartDaoImpl implements Shopping_CartDao{
     }
 
     @Override
-    public int get(Shopping_cart shopping_cart) throws SQLException {
+    public int add(Shopping_cart shopping_cart) throws SQLException {
         return 0;
     }
 
@@ -32,7 +32,6 @@ public class Shopping_CartDaoImpl implements Shopping_CartDao{
     }
 
     @Override
-    public int delete(Shopping_cart shopping_cart) {
-        return 0;
+    public void delete(Shopping_cart shopping_cart) {
     }
 }
