@@ -16,6 +16,10 @@ public interface Dao<T> {
      */
     List<T> getall() throws SQLException;
 
+    /**
+     * Saves entity into database
+     * @return saved item with id field populated
+     */
     int get(T t) throws SQLException;
 
     /**
