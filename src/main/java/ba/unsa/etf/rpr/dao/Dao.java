@@ -18,6 +18,10 @@ public interface Dao<T> {
 
     int get(T t) throws SQLException;
 
+    /**
+     * Fully updates entity in database based on id (primary) match.
+     * @return updated version of bean
+     */
     int update(T t) throws SQLException;
 
     /**
