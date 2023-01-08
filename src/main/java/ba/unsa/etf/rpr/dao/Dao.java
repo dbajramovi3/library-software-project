@@ -10,6 +10,10 @@ public interface Dao<T> {
      */
     T getById(int id) throws SQLException;
 
+    /**
+     * Lists all entities from database
+     * @return List of entities from database
+     */
     List<T> getall() throws SQLException;
 
     int get(T t) throws SQLException;
