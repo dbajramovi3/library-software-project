@@ -20,6 +20,9 @@ public interface Dao<T> {
 
     int update(T t) throws SQLException;
 
-    int delete(T t);
+    /**
+     * Delete of item from database with given id
+     */
+    int delete(T t) throws SQLException;
 }
 
