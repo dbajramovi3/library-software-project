@@ -12,17 +12,17 @@ public class Shopping_CartDaoImpl implements Shopping_CartDao{
     }
 
     @Override
+    public Shopping_cart getById(int id) throws SQLException {
+        return null;
+    }
+
+    @Override
     public List<Shopping_cart> getall() throws SQLException {
         return null;
     }
 
     @Override
-    public int save(Shopping_cart shopping_cart) throws SQLException {
-        return 0;
-    }
-
-    @Override
-    public int insert(Shopping_cart shopping_cart) throws SQLException {
+    public int get(Shopping_cart shopping_cart) throws SQLException {
         return 0;
     }
 

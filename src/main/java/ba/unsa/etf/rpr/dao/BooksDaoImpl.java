@@ -12,17 +12,17 @@ public class BooksDaoImpl implements BooksDao {
     }
 
     @Override
+    public Books getById(int id) throws SQLException {
+        return null;
+    }
+
+    @Override
     public List<Books> getall() throws SQLException {
         return null;
     }
 
     @Override
-    public int save(Books book) throws SQLException {
-        return 0;
-    }
-
-    @Override
-    public int insert(Books book) throws SQLException {
+    public int get(Books book) throws SQLException {
         return 0;
     }
 

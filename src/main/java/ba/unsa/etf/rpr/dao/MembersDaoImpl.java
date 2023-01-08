@@ -12,17 +12,17 @@ public class MembersDaoImpl implements MembersDao{
     }
 
     @Override
+    public Members getById(int id) throws SQLException {
+        return null;
+    }
+
+    @Override
     public List<Members> getall() throws SQLException {
         return null;
     }
 
     @Override
-    public int save(Members members) throws SQLException {
-        return 0;
-    }
-
-    @Override
-    public int insert(Members members) throws SQLException {
+    public int get(Members members) throws SQLException {
         return 0;
     }
 

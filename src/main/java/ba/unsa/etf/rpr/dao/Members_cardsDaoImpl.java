@@ -12,17 +12,17 @@ public class Members_cardsDaoImpl implements Members_cardsDao{
     }
 
     @Override
+    public Member_cards getById(int id) throws SQLException {
+        return null;
+    }
+
+    @Override
     public List<Member_cards> getall() throws SQLException {
         return null;
     }
 
     @Override
-    public int save(Member_cards member_cards) throws SQLException {
-        return 0;
-    }
-
-    @Override
-    public int insert(Member_cards member_cards) throws SQLException {
+    public int get(Member_cards member_cards) throws SQLException {
         return 0;
     }
 

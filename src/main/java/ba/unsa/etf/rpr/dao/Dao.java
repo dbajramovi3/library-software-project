@@ -3,13 +3,16 @@ import java.util.List;
 import java.sql.SQLException;
 
 public interface Dao<T> {
-    T get(int id) throws SQLException;
+
+    /**
+     * get one entity from database base on id
+     * @return Entity from database
+     */
+    T getById(int id) throws SQLException;
 
     List<T> getall() throws SQLException;
 
-    int save(T t) throws SQLException;
-
-    int insert(T t) throws SQLException;
+    int get(T t) throws SQLException;
 
     int update(T t) throws SQLException;
 
