@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr.domain;
 
 import java.util.Objects;
 
-public class Members {
+public class Members implements Idable {
     private int id;
     private String name;
     private String last_name;
