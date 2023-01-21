@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr.domain;
 import java.util.Date;
 import java.util.Objects;
 
-public class Member_cards {
+public class Member_cards implements Idable {
     private int id;
     private double payment;
     private String member_id;
