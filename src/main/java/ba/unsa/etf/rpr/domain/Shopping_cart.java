@@ -2,7 +2,7 @@ package ba.unsa.etf.rpr.domain;
 import java.util.Date;
 import java.util.Objects;
 
-public class Shopping_cart {
+public class Shopping_cart implements Idable {
     private int id;
     private String card_id;
     private String member_id;
