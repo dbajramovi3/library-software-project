@@ -1,6 +1,8 @@
 package ba.unsa.etf.rpr.dao;
+import ba.unsa.etf.rpr.exception.LibraryException;
 import java.util.List;
 import java.sql.SQLException;
+
 
 public interface Dao<T> {
 
@@ -8,29 +10,29 @@ public interface Dao<T> {
      * add one entity from database base on id
      * @return Entity from database
      */
-    T getById(int id) throws SQLException;
+    T getById(int id) throws LibraryException;
 
     /**
      * Lists all entities from database
      * @return List of entities from database
      */
-    List<T> getall() throws SQLException;
+    List<T> getall() throws LibraryException;
 
     /**
      * Saves entity into database
      * @return saved item with id field populated
      */
-    int add(T item) throws SQLException;
+    T add(T item) throws LibraryException;
 
     /**
      * Fully updates entity in database based on id (primary) match.
      * @return updated version of bean
      */
-    int update(T item) throws SQLException;
+    T update(T item) throws LibraryException;
 
     /**
      * Delete of item from database with given id
      */
-    void delete(T t) throws SQLException;
+    void delete(int id) throws LibraryException;
 }
 
