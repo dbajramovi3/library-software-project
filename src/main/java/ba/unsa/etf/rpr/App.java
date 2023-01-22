@@ -12,7 +12,7 @@ import ba.unsa.etf.rpr.exception.LibraryException;
 public class App 
 {
     public static void main( String[] args ) throws LibraryException {
-        MembersDaoImpl nesto = new MembersDaoImpl();
+
 
 
 

@@ -9,6 +9,21 @@ import java.util.List;
 import java.util.Map;
 
 public class Members_cardsDaoImpl extends AbstractDao<Member_cards> implements Members_cardsDao{
+    private static  Members_cardsDaoImpl instance = null;
+    private Members_cardsDaoImpl() {super("categories");
+    }
+
+    public static Members_cardsDaoImpl getInstance(){
+        if(instance==null)
+            instance = new Members_cardsDaoImpl();
+        return instance;
+    }
+
+    public static void removeInstance(){
+        if(instance!=null)
+            instance=null;
+    }
+
     public Members_cardsDaoImpl(String tableName) {
         super(tableName);
     }
@@ -29,12 +44,14 @@ public class Members_cardsDaoImpl extends AbstractDao<Member_cards> implements M
     }
 
     @Override
-    public Member_cards getById(int id) throws LibraryException {
+    public List<Member_cards> getall() throws LibraryException {
         return null;
     }
 
+    /*
+
     @Override
-    public List<Member_cards> getall() throws LibraryException {
+    public Member_cards getById(int id) throws LibraryException {
         return null;
     }
 
@@ -52,4 +69,5 @@ public class Members_cardsDaoImpl extends AbstractDao<Member_cards> implements M
     public void delete(int id) {
 
     }
+    */
 }

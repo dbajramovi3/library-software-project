@@ -9,6 +9,22 @@ import java.util.List;
 import java.util.Map;
 
 public class Shopping_CartDaoImpl extends AbstractDao<Shopping_cart> implements Shopping_CartDao{
+    private static  Shopping_CartDaoImpl instance = null;
+    private Shopping_CartDaoImpl() {
+        super("categories");
+    }
+
+    public static Shopping_CartDaoImpl getInstance(){
+        if(instance==null)
+            instance = new Shopping_CartDaoImpl();
+        return instance;
+    }
+
+    public static void removeInstance(){
+        if(instance!=null)
+            instance=null;
+    }
+
     public Shopping_CartDaoImpl(String tableName) {
         super(tableName);
     }
@@ -29,14 +45,17 @@ public class Shopping_CartDaoImpl extends AbstractDao<Shopping_cart> implements 
     }
 
     @Override
+    public List<Shopping_cart> getall() throws LibraryException {
+        return null;
+    }
+
+
+/*
+    @Override
     public Shopping_cart getById(int id) throws LibraryException {
         return null;
     }
 
-    @Override
-    public List<Shopping_cart> getall() throws LibraryException {
-        return null;
-    }
 
     @Override
     public Shopping_cart add(Shopping_cart shopping_cart) throws LibraryException {
@@ -51,4 +70,5 @@ public class Shopping_CartDaoImpl extends AbstractDao<Shopping_cart> implements 
     @Override
     public void delete(int id) {
     }
+    */
 }

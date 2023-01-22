@@ -2,7 +2,6 @@ package ba.unsa.etf.rpr.dao;
 
 import ba.unsa.etf.rpr.domain.Idable;
 import ba.unsa.etf.rpr.exception.LibraryException;
-import ba.unsa.etf.rpr.exception.LibraryException;
 
 import java.sql.*;
 import java.util.*;
@@ -10,7 +9,6 @@ import java.util.*;
 /**
  * Abstract class that implements core DAO CRUD methods for every entity
  *
- * @author Dino Keco
  */
 public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     private static Connection connection = null;

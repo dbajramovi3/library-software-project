@@ -8,13 +8,13 @@ import ba.unsa.etf.rpr.domain.Shopping_cart;
 
 public class DaoFactory {
 
-    private static final BooksDao booksDao = BooksDao.getInstance();
+    private static final BooksDao booksDao = BooksDaoImpl.getInstance();
 
-    private static final MembersDao membersDao = MembersDao.getInstance();
+    private static final MembersDao membersDao = MembersDaoImpl.getInstance();
 
-    private static final Members_cardsDao members_cardsDao = Members_cardsDao.getInstance();
+    private static final Members_cardsDao members_cardsDao = Members_cardsDaoImpl.getInstance();
 
-    private static final Shopping_CartDao shopping_cartDao = Shopping_CartDao.getInstance();
+    private static final Shopping_CartDao shopping_cartDao = Shopping_CartDaoImpl.getInstance();
 
     private DaoFactory(){
     }

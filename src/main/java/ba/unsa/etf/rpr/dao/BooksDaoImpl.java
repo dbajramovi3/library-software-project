@@ -10,6 +10,20 @@ import java.util.List;
 import java.util.Map;
 
 public class BooksDaoImpl extends AbstractDao<Books> implements BooksDao {
+    private static  BooksDaoImpl instance = null;
+    private BooksDaoImpl() {
+        super("books");
+    }
+    public static BooksDaoImpl getInstance(){
+        if(instance==null)
+            instance = new BooksDaoImpl();
+        return instance;
+    }
+
+    public static void removeInstance(){
+        if(instance!=null)
+            instance=null;
+    }
     public BooksDaoImpl(String tableName) {
         super(tableName);
     }
@@ -28,15 +42,16 @@ public class BooksDaoImpl extends AbstractDao<Books> implements BooksDao {
     public Map<String, Object> object2row(Books object) {
         return null;
     }
-
     @Override
-    public Books getById(int id) throws LibraryException {
+    public List<Books> getall() throws LibraryException {
         return null;
     }
 
+
+/*
     @Override
-    public List<Books> getall() throws LibraryException {
-       return null;
+    public Books getById(int id) throws LibraryException {
+        return null;
     }
 
     @Override
@@ -53,5 +68,5 @@ public class BooksDaoImpl extends AbstractDao<Books> implements BooksDao {
     public void delete(int id) {
 
     }
-    
+    */
 }

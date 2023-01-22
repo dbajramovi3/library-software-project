@@ -3,12 +3,29 @@ package ba.unsa.etf.rpr.dao;
 import ba.unsa.etf.rpr.domain.Members;
 import ba.unsa.etf.rpr.exception.LibraryException;
 
+import java.lang.reflect.Member;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
 public class MembersDaoImpl extends AbstractDao<Members> implements MembersDao{
+    private static  MembersDaoImpl instance = null;
+    private MembersDaoImpl() {
+        super("categories");
+    }
+
+    public static MembersDaoImpl getInstance(){
+        if(instance==null)
+            instance = new MembersDaoImpl();
+        return instance;
+    }
+
+    public static void removeInstance(){
+        if(instance!=null)
+            instance=null;
+    }
+
     public MembersDaoImpl(String tableName) {
         super(tableName);
     }
@@ -29,14 +46,17 @@ public class MembersDaoImpl extends AbstractDao<Members> implements MembersDao{
     }
 
     @Override
+    public List<Members> getall() throws LibraryException {
+        return null;
+    }
+
+
+    /*
+    @Override
     public Members getById(int id) throws LibraryException {
         return null;
     }
 
-    @Override
-    public List<Members> getall() throws LibraryException {
-        return null;
-    }
 
     @Override
     public Members add(Members members) throws LibraryException {
@@ -52,4 +72,6 @@ public class MembersDaoImpl extends AbstractDao<Members> implements MembersDao{
     public void delete(int id) {
 
     }
+
+     */
 }
