@@ -1,10 +1,9 @@
-package ba.unsa.etf.rpr.dao;
+package ba.unsa.etf.rpr.domain.dao;
 
 import ba.unsa.etf.rpr.domain.Shopping_cart;
 import ba.unsa.etf.rpr.exception.LibraryException;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -45,7 +44,7 @@ public class Shopping_CartDaoImpl extends AbstractDao<Shopping_cart> implements 
     }
 
     @Override
-    public List<Shopping_cart> getall() throws LibraryException {
+    public List<Shopping_cart> getAll() throws LibraryException {
         return null;
     }
 

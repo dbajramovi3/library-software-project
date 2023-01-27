@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr.dao;
+package ba.unsa.etf.rpr.domain.dao;
 
 import ba.unsa.etf.rpr.domain.Idable;
 import ba.unsa.etf.rpr.exception.LibraryException;
@@ -27,6 +27,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
                 String url = p.getProperty("db.connection_string");
                 String username = p.getProperty("db.username");
                 String password = p.getProperty("db.password");
+                Class.forName("com.mysql.jdbc.Driver");
                 AbstractDao.connection = DriverManager.getConnection(url, username, password);
             } catch (Exception e) {
                 e.printStackTrace();

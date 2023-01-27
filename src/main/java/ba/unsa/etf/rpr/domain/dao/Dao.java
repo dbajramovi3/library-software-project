@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr.dao;
+package ba.unsa.etf.rpr.domain.dao;
 import ba.unsa.etf.rpr.exception.LibraryException;
 import java.util.List;
 import java.sql.SQLException;
@@ -16,7 +16,7 @@ public interface Dao<T> {
      * Lists all entities from database
      * @return List of entities from database
      */
-    List<T> getall() throws LibraryException;
+    List<T> getAll() throws LibraryException;
 
     /**
      * Saves entity into database

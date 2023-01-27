@@ -1,11 +1,9 @@
-package ba.unsa.etf.rpr.dao;
+package ba.unsa.etf.rpr.domain.dao;
 
 import ba.unsa.etf.rpr.domain.Books;
 import ba.unsa.etf.rpr.exception.LibraryException;
 
-import java.awt.print.Book;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -43,7 +41,7 @@ public class BooksDaoImpl extends AbstractDao<Books> implements BooksDao {
         return null;
     }
     @Override
-    public List<Books> getall() throws LibraryException {
+    public List<Books> getAll() throws LibraryException {
         return null;
     }
 

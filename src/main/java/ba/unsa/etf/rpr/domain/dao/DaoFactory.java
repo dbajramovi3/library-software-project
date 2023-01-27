@@ -1,10 +1,7 @@
-package ba.unsa.etf.rpr.dao;
+package ba.unsa.etf.rpr.domain.dao;
 
 
  // Factory method for singleton implementation of DAOs
-
-import ba.unsa.etf.rpr.domain.Members;
-import ba.unsa.etf.rpr.domain.Shopping_cart;
 
 public class DaoFactory {
 

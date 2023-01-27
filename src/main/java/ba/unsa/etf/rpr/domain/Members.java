@@ -14,7 +14,7 @@ public class Members implements Idable {
         this.last_name = last_name;
         this.email = email;
     }
-
+public Members(){ }
     public int getId() {
         return id;
     }

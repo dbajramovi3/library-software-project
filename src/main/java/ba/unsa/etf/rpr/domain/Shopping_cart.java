@@ -15,6 +15,8 @@ public class Shopping_cart implements Idable {
         this.buy_date = buy_date;
     }
 
+    public Shopping_cart(){ }
+
     public int getId() {
         return id;
     }

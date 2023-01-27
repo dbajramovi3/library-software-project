@@ -1,10 +1,9 @@
-package ba.unsa.etf.rpr.dao;
+package ba.unsa.etf.rpr.domain.dao;
 
 import ba.unsa.etf.rpr.domain.Member_cards;
 import ba.unsa.etf.rpr.exception.LibraryException;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -44,7 +43,7 @@ public class Members_cardsDaoImpl extends AbstractDao<Member_cards> implements M
     }
 
     @Override
-    public List<Member_cards> getall() throws LibraryException {
+    public List<Member_cards> getAll() throws LibraryException {
         return null;
     }
 

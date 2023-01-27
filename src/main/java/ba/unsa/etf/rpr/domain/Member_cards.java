@@ -16,6 +16,7 @@ public class Member_cards implements Idable {
         this.activation_date = activation_date;
         this.expiration_date = expiration_date;
     }
+    public Member_cards(){ }
 
     public int getId() {
         return id;

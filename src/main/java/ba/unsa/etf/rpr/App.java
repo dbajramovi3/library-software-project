@@ -1,8 +1,6 @@
 package ba.unsa.etf.rpr;
 
-import ba.unsa.etf.rpr.dao.MembersDaoImpl;
-import ba.unsa.etf.rpr.domain.Members;
-import ba.unsa.etf.rpr.exception.LibraryException;
+import ba.unsa.etf.rpr.domain.dao.BooksDaoImpl;
 
 
 /**
@@ -11,9 +9,9 @@ import ba.unsa.etf.rpr.exception.LibraryException;
  */
 public class App 
 {
-    public static void main( String[] args ) throws LibraryException {
+    public static void main( String[] args ) {
 
-
+        BooksDaoImpl knjiga = new BooksDaoImpl("books");
 
 
     }

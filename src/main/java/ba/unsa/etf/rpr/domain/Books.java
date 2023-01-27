@@ -16,6 +16,7 @@ public class Books implements Idable {
         this.total_book_count = total_book_count;
         this.current_book_hold = current_book_hold;
     }
+    public Books(){ }
 
     public int getId() {
         return id;
