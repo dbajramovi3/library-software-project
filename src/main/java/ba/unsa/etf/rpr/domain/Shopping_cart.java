@@ -5,14 +5,14 @@ import java.util.Objects;
 
 public class Shopping_cart implements Idable, Serializable {
     private int id;
-    private String card_id;
-    private String member_id;
+    private String member_card_id;
+    private String book_id;
     private Date buy_date;
 
     public Shopping_cart(int id, String card_id, String member_id, Date buy_date) {
         this.id = id;
-        this.card_id = card_id;
-        this.member_id = member_id;
+        this.member_card_id = card_id;
+        this.book_id = member_id;
         this.buy_date = buy_date;
     }
 
@@ -26,20 +26,20 @@ public class Shopping_cart implements Idable, Serializable {
         this.id = id;
     }
 
-    public String getCard_id() {
-        return card_id;
+    public String getMember_card_id() {
+        return member_card_id;
     }
 
-    public void setCard_id(String card_id) {
-        this.card_id = card_id;
+    public void setMember_card_id(String member_card_id) {
+        this.member_card_id = member_card_id;
     }
 
-    public String getMember_id() {
-        return member_id;
+    public String getBook_id() {
+        return book_id;
     }
 
-    public void setMember_id(String member_id) {
-        this.member_id = member_id;
+    public void setBook_id(String book_id) {
+        this.book_id = book_id;
     }
 
     public Date getBuy_date() {
@@ -54,8 +54,8 @@ public class Shopping_cart implements Idable, Serializable {
     public String toString() {
         return "Shopping_cart{" +
                 "id=" + id +
-                ", card_id='" + card_id + '\'' +
-                ", member_id='" + member_id + '\'' +
+                ", card_id='" + member_card_id + '\'' +
+                ", member_id='" + book_id + '\'' +
                 ", buy_date=" + buy_date +
                 '}';
     }
@@ -65,11 +65,11 @@ public class Shopping_cart implements Idable, Serializable {
         if (this == o) return true;
         if (!(o instanceof Shopping_cart)) return false;
         Shopping_cart that = (Shopping_cart) o;
-        return getId() == that.getId() && Objects.equals(getCard_id(), that.getCard_id()) && Objects.equals(getMember_id(), that.getMember_id()) && Objects.equals(getBuy_date(), that.getBuy_date());
+        return getId() == that.getId() && Objects.equals(getMember_card_id(), that.getMember_card_id()) && Objects.equals(getBook_id(), that.getBook_id()) && Objects.equals(getBuy_date(), that.getBuy_date());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getCard_id(), getMember_id(), getBuy_date());
+        return Objects.hash(getId(), getMember_card_id(), getBook_id(), getBuy_date());
     }
 }
