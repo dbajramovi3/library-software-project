@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr;
 
-import ba.unsa.etf.rpr.domain.dao.BooksDaoImpl;
+import ba.unsa.etf.rpr.dao.BooksDaoImpl;
 
 
 /**

@@ -1,8 +1,9 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Members implements Idable {
+public class Members implements Idable, Serializable {
     private int id;
     private String name;
     private String last_name;

@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr.domain.dao;
+package ba.unsa.etf.rpr.dao;
 import ba.unsa.etf.rpr.exception.LibraryException;
 import java.util.List;
 import java.sql.SQLException;

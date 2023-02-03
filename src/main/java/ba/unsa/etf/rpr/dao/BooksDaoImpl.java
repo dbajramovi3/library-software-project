@@ -1,11 +1,13 @@
-package ba.unsa.etf.rpr.domain.dao;
+package ba.unsa.etf.rpr.dao;
 
 import ba.unsa.etf.rpr.domain.Books;
 import ba.unsa.etf.rpr.exception.LibraryException;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class BooksDaoImpl extends AbstractDao<Books> implements BooksDao {
     private static  BooksDaoImpl instance = null;
@@ -30,20 +32,41 @@ public class BooksDaoImpl extends AbstractDao<Books> implements BooksDao {
     public Books get(int id) throws LibraryException {
         return null;
     }
-
-    @Override
-    public Books row2object(ResultSet rs) throws LibraryException {
-        return null;
-    }
-
-    @Override
-    public Map<String, Object> object2row(Books object) {
-        return null;
-    }
     @Override
     public List<Books> getAll() throws LibraryException {
         return null;
     }
+
+    @Override
+    public Books row2object(ResultSet rs) throws LibraryException {
+        try {
+            Books book = new Books();
+            book.setId(rs.getInt("id"));
+            book.setTitle(rs.getString("title"));
+            book.setAuthor(rs.getString("author"));
+            book.setCurrent_book_hold(rs.getInt("current_book_hold"));
+            return book;
+        } catch (SQLException e) {
+            throw new LibraryException(e.getMessage(), e);
+        }
+    }
+
+    @Override
+    public Map<String, Object> object2row(Books object) {
+        Map<String, Object> row = new TreeMap<>();
+        row.put("id", object.getId());
+        row.put("title", object.getTitle());
+        row.put("author", object.getAuthor());
+        row.put("current_book_hold", object.getCurrent_book_hold());
+        return row;
+    }
+
+
+
+
+
+
+
 
 
 /*

@@ -1,8 +1,9 @@
 package ba.unsa.etf.rpr.domain;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Member_cards implements Idable {
+public class Member_cards implements Idable, Serializable {
     private int id;
     private double payment;
     private String member_id;

@@ -1,8 +1,9 @@
 package ba.unsa.etf.rpr.domain;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Shopping_cart implements Idable {
+public class Shopping_cart implements Idable, Serializable {
     private int id;
     private String card_id;
     private String member_id;
