@@ -1,11 +1,14 @@
 package ba.unsa.etf.rpr.dao;
 
+import ba.unsa.etf.rpr.domain.Member_cards;
 import ba.unsa.etf.rpr.domain.Members;
 import ba.unsa.etf.rpr.exception.LibraryException;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class MembersDaoImpl extends AbstractDao<Members> implements MembersDao{
     private static  MembersDaoImpl instance = null;
@@ -34,19 +37,34 @@ public class MembersDaoImpl extends AbstractDao<Members> implements MembersDao{
     }
 
     @Override
-    public Members row2object(ResultSet rs) throws LibraryException {
+    public List<Members> getAll() throws LibraryException {
         return null;
+    }
+
+    @Override
+    public Members row2object(ResultSet rs) throws LibraryException {
+        try {
+            Members members = new Members();
+            members.setId(rs.getInt("id"));
+            members.setName(rs.getString("name"));
+            members.setLast_name(rs.getString("last_name"));
+            members.setEmail(rs.getString("email"));
+            return members;
+        } catch (SQLException e) {
+            throw new LibraryException(e.getMessage(), e);
+        }
     }
 
     @Override
     public Map<String, Object> object2row(Members object) {
-        return null;
+        Map<String, Object> row = new TreeMap<>();
+        row.put("id", object.getId());
+        row.put("name", object.getName());
+        row.put("last_name", object.getLast_name());
+        row.put("email", object.getEmail());
+        return row;
     }
 
-    @Override
-    public List<Members> getAll() throws LibraryException {
-        return null;
-    }
 
 
     /*
