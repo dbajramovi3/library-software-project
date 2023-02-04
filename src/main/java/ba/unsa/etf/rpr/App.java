@@ -5,5 +5,8 @@ package ba.unsa.etf.rpr;
  * comment by dbajramovi3
  */
 public class App  {
+    public static void main(String[] args) {
+
+    }
 
 }

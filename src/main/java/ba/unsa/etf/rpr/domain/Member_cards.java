@@ -5,11 +5,11 @@ import java.util.Objects;
 
 public class Member_cards implements Idable, Serializable {
     private int id;
-    private String member_id;
+    private int member_id;
     private Date activation_date;
     private Date expiration_date;
 
-    public Member_cards(int id, String member_id, Date activation_date, Date expiration_date) {
+    public Member_cards(int id, int member_id, Date activation_date, Date expiration_date) {
         this.id = id;
         this.member_id = member_id;
         this.activation_date = activation_date;
@@ -25,11 +25,11 @@ public class Member_cards implements Idable, Serializable {
         this.id = id;
     }
 
-    public String getMember_id() {
+    public int getMember_id() {
         return member_id;
     }
 
-    public void setMember_id(String member_id) {
+    public void setMember_id(int member_id) {
         this.member_id = member_id;
     }
 

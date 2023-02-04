@@ -46,8 +46,8 @@ public class Shopping_CartDaoImpl extends AbstractDao<Shopping_cart> implements 
         try {
             Shopping_cart shopping_cart = new Shopping_cart();
             shopping_cart.setId(rs.getInt("id"));
-            shopping_cart.setMember_card_id(rs.getString("member_card_id"));
-            shopping_cart.setBook_id(rs.getString("book_id"));
+            shopping_cart.setMember_card_id(rs.getInt("member_card_id"));
+            shopping_cart.setBook_id(rs.getInt("book_id"));
             shopping_cart.setBuy_date(rs.getDate("buy_date"));
             return shopping_cart;
         } catch (SQLException e) {

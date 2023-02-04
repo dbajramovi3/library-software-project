@@ -45,7 +45,7 @@ public class Members_cardsDaoImpl extends AbstractDao<Member_cards> implements M
         try {
             Member_cards member_cards = new Member_cards();
             member_cards.setId(rs.getInt("id"));
-            member_cards.setMember_id(rs.getString("member_id"));
+            member_cards.setMember_id(rs.getInt("member_id"));
             member_cards.setActivation_date(rs.getDate("activation_date"));
             member_cards.setExpiration_date(rs.getDate("expiration_date"));
             return member_cards;
