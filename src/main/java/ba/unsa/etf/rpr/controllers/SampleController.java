@@ -61,6 +61,23 @@ Ovako je to moguce
         stage.show();
     }
 
+    public void searchBookAction(ActionEvent actionEvent) {
+    }
+
+    public void searchMemberAction(ActionEvent actionEvent) {
+    }
+
+    public void allBooksAction(ActionEvent actionEvent) {
+    }
+
+    public void allMembersAction(ActionEvent actionEvent) {
+    }
+
+    public void registerBookAction(ActionEvent actionEvent) {
+    }
+
+
+
     public SampleController(){
     }
 
@@ -71,4 +88,5 @@ Ovako je to moguce
     public void initialize(){
 
     }
+
 }
