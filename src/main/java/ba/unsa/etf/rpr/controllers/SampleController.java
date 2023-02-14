@@ -58,6 +58,9 @@ public class SampleController {
     public SampleController(){
     }
 
+    //Ovdje dodajemo listener koji uvijek ide uz property
+    // imeId.textProperty().addListener((obs, oldValue, newValue) ->{ sout...});
+    //obs je observer
     @FXML
     public void initialize(){
 
