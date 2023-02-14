@@ -29,6 +29,8 @@ public class SampleController {
          addBookController controller = new addBookController(imeId.getText(), prezimeId.getText()); jer saljemo 2 parametra
          String ime i prezime
      */
+
+
     public void addBookActon(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/addBook.fxml"));
@@ -41,7 +43,11 @@ public class SampleController {
         stage.setResizable(false);
         stage.show();
     }
-
+/*
+Ove akcija ne mozemo pisati kao AppFX iz razloga sto moramo izbrisati text iz Sample controllera. tj. fx:controller="ba.unsa.etf.rpr.controllers..."
+Da smo to uraditi prozor se ne bi otvorio i prikazivalo bi error
+Ovako je to moguce
+ */
     public void addMemberAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/addMember.fxml"));

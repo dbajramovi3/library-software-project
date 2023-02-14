@@ -20,7 +20,6 @@ public class AppFX extends Application {
         primaryStage.setTitle("Aplikacija");
         primaryStage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
         primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-      //  Image img = new Image("https://i.pinimg.com/originals/8c/74/bb/8c74bb4e959d7211e27c10b5980cb970.jpg");
         primaryStage.setResizable(false);
         primaryStage.show();
     }
