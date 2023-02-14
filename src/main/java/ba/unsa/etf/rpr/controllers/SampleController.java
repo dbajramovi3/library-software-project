@@ -20,6 +20,11 @@ public class SampleController {
     public Button addMemberButtonid;
     public TextField enterMemberCardid;
     public TextField enterBookNameid;
+    public Button registerBookid;
+    public Button allMembersid;
+    public Button allBooksid;
+    public Button searchMemberid;
+    public Button searchBookButtonid;
 
     /* Napravili smo akciju za addBookAction s tim da smo je povezali tako da ne moramo povezivat putme addBook.fxml u tekst kodu
     Ovo je prva akcija koju smo napravili i nije nam trebao listener jer nismo unosili podatke iz razloga sto app ne zahtjeva log in formu
