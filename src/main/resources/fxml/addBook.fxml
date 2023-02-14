@@ -79,19 +79,6 @@
                   <Insets left="20.0" right="20.0" />
                </VBox.margin>
             </TextField>
-            <Label text="Book Count">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <padding>
-                  <Insets bottom="5.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-            </Label>
-            <TextField>
-               <VBox.margin>
-                  <Insets left="20.0" right="20.0" />
-               </VBox.margin>
-            </TextField>
          </children>
       </VBox>
    </children>
