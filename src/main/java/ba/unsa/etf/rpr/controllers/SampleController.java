@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
@@ -17,6 +18,8 @@ public class SampleController {
 
     public Button addBookButtonid;
     public Button addMemberButtonid;
+    public TextField enterMemberCardid;
+    public TextField enterBookNameid;
 
     /* Napravili smo akciju za addBookAction s tim da smo je povezali tako da ne moramo povezivat putme addBook.fxml u tekst kodu
     Ovo je prva akcija koju smo napravili i nije nam trebao listener jer nismo unosili podatke iz razloga sto app ne zahtjeva log in formu
@@ -114,7 +117,7 @@ Ovako je to moguce
     public void registerBookAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registerBook.fxml"));
-        registerBookController controller = new registerBookController();
+        registerBookController controller = new registerBookController(enterBookNameid.getText(), enterMemberCardid.getText());
         loader.setController(controller);
         stage.setTitle("Aplikacija");
         stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
