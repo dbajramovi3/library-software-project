@@ -44,9 +44,9 @@ public class SampleController {
 
     public void addMemberAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/addBook.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/addMember.fxml"));
         //Parent root = FXMLLoader.load(getClass().getResource("/fxml/addBook.fxml"));
-        addBookController controller = new addBookController();
+        addMemberController controller = new addMemberController();
         loader.setController(controller);
         stage.setTitle("Aplikacija");
         stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
