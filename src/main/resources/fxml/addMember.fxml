@@ -92,7 +92,7 @@
                   <Insets left="20.0" right="20.0" />
                </VBox.margin>
             </TextField>
-            <Label fx:id="NeispravanTextId" textFill="RED">
+            <Label fx:id="neispravanTextId" textFill="RED">
                <padding>
                   <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
                </padding>

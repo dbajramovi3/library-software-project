@@ -13,7 +13,7 @@ public class addMemberController {
     public TextField lastNameId;
     public TextField emailId;
     public TextField memberId;
-    public Label NeispravanTextId;
+    public Label neispravanTextId;
 
     public void saveAction(ActionEvent actionEvent) {
     }
@@ -26,13 +26,12 @@ public class addMemberController {
     }
 
     @FXML
-    public void Initialize(){
+    public void initialize(){
         memberId.textProperty().addListener((obs, newValue, oldValue) -> {
-            if(newValue.length()==4){
-                NeispravanTextId.setText("");
-            }
-            else NeispravanTextId.setText("Id mora imati 5 karaktera!");
+            if(newValue.length()==4)
+                neispravanTextId.setText("");
+            else
+                neispravanTextId.setText("Id mora imati 5 karaktera!");
         });
-
     }
 }
