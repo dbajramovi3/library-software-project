@@ -16,6 +16,7 @@ import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 public class SampleController {
 
     public Button addBookButtonid;
+    public Button addMemberButtonid;
 
     /* Napravili smo akciju za addBookAction s tim da smo je povezali tako da ne moramo povezivat putme addBook.fxml u tekst kodu
     Ovo je prva akcija koju smo napravili i nije nam trebao listener jer nismo unosili podatke iz razloga sto app ne zahtjeva log in formu
@@ -40,11 +41,25 @@ public class SampleController {
         stage.setResizable(false);
         stage.show();
     }
-     public SampleController(){
-     }
 
-     @FXML
+    public void addMemberAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/addBook.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("/fxml/addBook.fxml"));
+        addBookController controller = new addBookController();
+        loader.setController(controller);
+        stage.setTitle("Aplikacija");
+        stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
+        stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    public SampleController(){
+    }
+
+    @FXML
     public void initialize(){
 
-     }
+    }
 }
