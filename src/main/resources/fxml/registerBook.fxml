@@ -40,7 +40,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </Label>
-      <Button fx:id="backId" mnemonicParsing="false" onAction="#backAction" prefHeight="53.0" prefWidth="220.0" text="Back" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <Button fx:id="closeId" mnemonicParsing="false" onAction="#closeAction" prefHeight="53.0" prefWidth="220.0" text="Close" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
          </GridPane.margin>
