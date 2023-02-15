@@ -1,11 +1,13 @@
 package ba.unsa.etf.rpr.controllers;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -26,6 +28,7 @@ public class SampleController {
     public Button allBooksid;
     public Button searchMemberid;
     public Button searchBookButtonid;
+    public ListView listView;
 
     /* Napravili smo akciju za addBookAction s tim da smo je povezali tako da ne moramo povezivat putme addBook.fxml u tekst kodu
     Ovo je prva akcija koju smo napravili i nije nam trebao listener jer nismo unosili podatke iz razloga sto app ne zahtjeva log in formu
@@ -51,12 +54,17 @@ public class SampleController {
         stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         stage.setResizable(false);
         stage.show();
+    }
 
+      //SetOnHiding metoda koja ce mi potencijalno trebati poslije
+        /*
         stage.setOnHiding(x->{
-            //kupimo podatke sa dodatnog prozora uz pomoc ovog ispod
             List<String> lista = controller.vratiPodatke();
+            listView.setItems(FXCollections.observableList(lista));
         });
     }
+    */
+
 /*
 Ove akcija ne mozemo pisati kao AppFX iz razloga sto moramo izbrisati text iz Sample controllera. tj. fx:controller="ba.unsa.etf.rpr.controllers..."
 Da smo to uraditi prozor se ne bi otvorio i prikazivalo bi error
@@ -110,6 +118,7 @@ Ovako je to moguce
         stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         stage.setResizable(false);
         stage.show();
+
 
     }
 

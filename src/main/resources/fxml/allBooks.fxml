@@ -20,7 +20,7 @@
       <RowConstraints maxHeight="337.40001144409183" minHeight="10.0" prefHeight="33.20002441406251" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <ListView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+      <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="679.0" text="All Books">
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
