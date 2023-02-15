@@ -29,6 +29,6 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="618.0" text="Close" GridPane.rowIndex="3" />
+      <Button fx:id="closeId" mnemonicParsing="false" onAction="#closeAction" prefHeight="26.0" prefWidth="618.0" text="Close" GridPane.rowIndex="3" />
    </children>
 </GridPane>
