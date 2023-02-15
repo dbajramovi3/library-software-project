@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class addMemberController {
     public Button saveButtonId;
@@ -16,6 +17,9 @@ public class addMemberController {
     public Label neispravanTextId;
 
     public void saveAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) memberId.getScene().getWindow();
+        stage.close();
+
     }
 
     public void cancelAction(ActionEvent actionEvent) {
