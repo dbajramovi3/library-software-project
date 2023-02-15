@@ -23,21 +23,19 @@ public class addBookController {
     public TextField authorId;
     public Label neispravanTextId;
 
+    /*
+        Stage stage = (Stage) bookId.getScene().getWindow();
+        stage.close();
+        Ovako izgleda zatvaranje nekog prozora
+     */
     public void saveAction(ActionEvent actionEvent) throws IOException {
-        /*
-        Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/addBook.fxml"));
-        addBookController controller = new addBookController();
-        loader.setController(controller);
-        stage.setTitle("Aplikacija");
-        stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
-        stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-        stage.setResizable(false);
-        stage.show();
-         */
+        Stage stage = (Stage) bookId.getScene().getWindow();
+        stage.close();
     }
 
     public void cancelAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) bookId.getScene().getWindow();
+        stage.close();
     }
 
     public addBookController() {
