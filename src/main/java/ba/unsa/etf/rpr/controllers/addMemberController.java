@@ -25,6 +25,7 @@ public class addMemberController {
 
     }
 //initialize metoda prilikom unosa id za member, kao i sto je za book jer id MORA imati 5 karaktera
+
     @FXML
     public void initialize(){
         memberId.textProperty().addListener((obs, newValue, oldValue) -> {
