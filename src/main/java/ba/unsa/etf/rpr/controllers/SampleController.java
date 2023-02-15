@@ -28,6 +28,7 @@ public class SampleController {
     public Button allBooksid;
     public Button searchMemberid;
     public Button searchBookButtonid;
+
     public ListView listView;
 
     /* Napravili smo akciju za addBookAction s tim da smo je povezali tako da ne moramo povezivat putme addBook.fxml u tekst kodu
@@ -62,7 +63,11 @@ public class SampleController {
             List<String> lista = controller.vratiPodatke();
             listView.setItems(FXCollections.observableList(lista));
         });
-    }
+    U slucaju ako bude trebala setonhiding metoda ako neces da se preklapaju podaci ovako ces napravit:
+     stage.setOnHiding(x->{
+            List<String> lista = controller.vratiPodatke();
+            listView.getItems().addAll(FXCollections.observableList(lista));
+        });
     */
 
 /*
