@@ -23,6 +23,8 @@ public class addMemberController {
     }
 
     public void cancelAction(ActionEvent actionEvent) {
+        Stage stage = (Stage) memberId.getScene().getWindow();
+        stage.close();
     }
 
     public addMemberController() {
