@@ -47,6 +47,7 @@ public class addBookController {
         lista.add(bookTitleId.getText());
         lista.add(authorId.getText());
         lista.add(bookId.getText());
+        return lista;
     }
 
     public addBookController() {
