@@ -12,6 +12,8 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
@@ -36,6 +38,11 @@ public class addBookController {
     public void cancelAction(ActionEvent actionEvent) {
         Stage stage = (Stage) bookId.getScene().getWindow();
         stage.close();
+    }
+//Kada zelimo da vratimo podatke sa pomocne metode na glavnu moramo napraviti pomocnu metodu
+    //To upravo radimo i zelimo da nam vraca listu stringova
+    public List<String> vratiPodatke(){
+        return new ArrayList<>();
     }
 
     public addBookController() {
