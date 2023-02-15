@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -19,7 +20,8 @@
     <RowConstraints maxHeight="128.60001220703126" minHeight="9.400002861022955" prefHeight="67.59999618530273" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="321.6" minHeight="10.0" prefHeight="102.00000381469727" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="321.6" minHeight="10.0" prefHeight="102.00000381469727" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="229.7999786376953" minHeight="10.0" prefHeight="229.7999786376953" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="287.80003967285154" minHeight="10.0" prefHeight="173.80001220703122" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="229.7999786376953" minHeight="10.0" prefHeight="71.39998779296877" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="61.0" prefWidth="560.0" text="Search Book">
@@ -63,5 +65,13 @@
             </ImageView>
          </children>
       </HBox>
+      <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="591.0" text="Close" GridPane.rowIndex="4">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+      </Button>
    </children>
 </GridPane>
