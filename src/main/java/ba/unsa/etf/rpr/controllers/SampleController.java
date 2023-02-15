@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
@@ -50,6 +51,11 @@ public class SampleController {
         stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         stage.setResizable(false);
         stage.show();
+
+        stage.setOnHiding(x->{
+            //kupimo podatke sa dodatnog prozora uz pomoc ovog ispod
+            List<String> lista = controller.vratiPodatke();
+        });
     }
 /*
 Ove akcija ne mozemo pisati kao AppFX iz razloga sto moramo izbrisati text iz Sample controllera. tj. fx:controller="ba.unsa.etf.rpr.controllers..."

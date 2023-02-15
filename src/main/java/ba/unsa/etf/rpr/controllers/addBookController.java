@@ -34,6 +34,8 @@ public class addBookController {
     public void saveAction(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) bookId.getScene().getWindow();
         stage.close();
+
+
     }
 
     public void cancelAction(ActionEvent actionEvent) {
