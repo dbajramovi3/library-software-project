@@ -35,12 +35,12 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <TextField prefHeight="53.0" prefWidth="460.0" GridPane.rowIndex="2">
+      <TextField fx:id="enterBookNameId" prefHeight="53.0" prefWidth="460.0" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="40.0" left="40.0" right="40.0" top="20.0" />
          </GridPane.margin>
       </TextField>
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="90.0" prefWidth="600.0" text="Label" textFill="RED" GridPane.rowIndex="3">
+      <Label fx:id="labelId" alignment="CENTER" contentDisplay="CENTER" prefHeight="90.0" prefWidth="600.0" text="Label" textFill="RED" GridPane.rowIndex="3">
          <font>
             <Font size="24.0" />
          </font>
@@ -65,7 +65,7 @@
             </ImageView>
          </children>
       </HBox>
-      <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="591.0" text="Close" GridPane.rowIndex="4">
+      <Button fx:id="closeButtonId" mnemonicParsing="false" onAction="#closeAction" prefHeight="50.0" prefWidth="591.0" text="Close" GridPane.rowIndex="4">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
