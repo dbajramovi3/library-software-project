@@ -123,8 +123,6 @@ Ovako je to moguce
         stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         stage.setResizable(false);
         stage.show();
-
-
     }
 
     public void allMembersAction(ActionEvent actionEvent) throws IOException {
