@@ -24,6 +24,7 @@ public class addBookController {
     public TextField bookId;
     public TextField authorId;
     public Label neispravanTextId;
+    private String title, id, author;
 
     /*
         Stage stage = (Stage) bookId.getScene().getWindow();
@@ -42,7 +43,10 @@ public class addBookController {
 //Kada zelimo da vratimo podatke sa pomocne metode na glavnu moramo napraviti pomocnu metodu
     //To upravo radimo i zelimo da nam vraca listu stringova
     public List<String> vratiPodatke(){
-        return new ArrayList<>();
+        List<String> lista = new ArrayList<>();
+        lista.add(bookTitleId.getText());
+        lista.add(authorId.getText());
+        lista.add(bookId.getText());
     }
 
     public addBookController() {
