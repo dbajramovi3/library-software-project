@@ -118,7 +118,7 @@ Ovako je to moguce
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/allBooks.fxml"));
         allBooksController controller = new allBooksController();
         loader.setController(controller);
-        stage.setTitle("Aplikacija");
+        stage.setTitle("All Books");
         stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
         stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         stage.setResizable(false);
@@ -130,7 +130,7 @@ Ovako je to moguce
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/allMembers.fxml"));
         allMembersController controller = new allMembersController();
         loader.setController(controller);
-        stage.setTitle("Aplikacija");
+        stage.setTitle("All Members");
         stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
         stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         stage.setResizable(false);
