@@ -51,13 +51,10 @@ public class Book implements Idable, Serializable {
 
     @Override
     public String toString() {
-        return "books{" +
-                "id=" + id +
+        return "id=" + id +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
-
-                ", current_book_hold=" + current_book_hold +
-                '}';
+                ", current_book_hold=" + current_book_hold;
     }
 
     @Override

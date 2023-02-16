@@ -3,6 +3,7 @@ package ba.unsa.etf.rpr.controllers;
 import ba.unsa.etf.rpr.business.BookManager;
 import ba.unsa.etf.rpr.exception.LibraryException;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -21,6 +22,7 @@ public class allBooksController {
         try {
             listView.setItems(FXCollections.observableList(bookManager.getAll()));
         } catch (LibraryException e) {
+            System.out.println("Exception in initialize method in allBooksController");
             throw new RuntimeException(e);
         }
     }
