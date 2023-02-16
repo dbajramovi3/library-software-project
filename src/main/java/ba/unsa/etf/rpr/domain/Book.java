@@ -3,19 +3,19 @@ package ba.unsa.etf.rpr.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Books implements Idable, Serializable {
+public class Book implements Idable, Serializable {
     private int id;
     private String title;
     private String author;
     private int current_book_hold;
 
-    public Books(int id, String title, String author, int current_book_hold) {
+    public Book(int id, String title, String author, int current_book_hold) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.current_book_hold = current_book_hold;
     }
-    public Books(){ }
+    public Book(){ }
 
     public int getId() {
         return id;
@@ -63,8 +63,8 @@ public class Books implements Idable, Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Books)) return false;
-        Books books = (Books) o;
+        if (!(o instanceof Book)) return false;
+        Book books = (Book) o;
         return getId() == books.getId() && getCurrent_book_hold() == books.getCurrent_book_hold() && Objects.equals(getTitle(), books.getTitle()) && Objects.equals(getAuthor(), books.getAuthor());
     }
 

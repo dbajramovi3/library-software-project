@@ -1,7 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-import ba.unsa.etf.rpr.domain.Member_cards;
-import ba.unsa.etf.rpr.domain.Members;
+import ba.unsa.etf.rpr.domain.Member;
 import ba.unsa.etf.rpr.exception.LibraryException;
 
 import java.sql.ResultSet;
@@ -10,15 +9,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class MembersDaoImpl extends AbstractDao<Members> implements MembersDao{
-    private static  MembersDaoImpl instance = null;
-    private MembersDaoImpl() {
+public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
+    private static MemberDaoImpl instance = null;
+    private MemberDaoImpl() {
         super("categories");
     }
 
-    public static MembersDaoImpl getInstance(){
+    public static MemberDaoImpl getInstance(){
         if(instance==null)
-            instance = new MembersDaoImpl();
+            instance = new MemberDaoImpl();
         return instance;
     }
 
@@ -27,24 +26,24 @@ public class MembersDaoImpl extends AbstractDao<Members> implements MembersDao{
             instance=null;
     }
 
-    public MembersDaoImpl(String tableName) {
+    public MemberDaoImpl(String tableName) {
         super(tableName);
     }
 
     @Override
-    public Members get(int id) throws LibraryException {
+    public Member get(int id) throws LibraryException {
         return null;
     }
 
     @Override
-    public List<Members> getAll() throws LibraryException {
+    public List<Member> getAll() throws LibraryException {
         return null;
     }
 
     @Override
-    public Members row2object(ResultSet rs) throws LibraryException {
+    public Member row2object(ResultSet rs) throws LibraryException {
         try {
-            Members members = new Members();
+            Member members = new Member();
             members.setId(rs.getInt("id"));
             members.setName(rs.getString("name"));
             members.setLast_name(rs.getString("last_name"));
@@ -56,7 +55,7 @@ public class MembersDaoImpl extends AbstractDao<Members> implements MembersDao{
     }
 
     @Override
-    public Map<String, Object> object2row(Members object) {
+    public Map<String, Object> object2row(Member object) {
         Map<String, Object> row = new TreeMap<>();
         row.put("id", object.getId());
         row.put("name", object.getName());

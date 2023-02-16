@@ -1,7 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-import ba.unsa.etf.rpr.domain.Member_cards;
-import ba.unsa.etf.rpr.domain.Shopping_cart;
+import ba.unsa.etf.rpr.domain.ShoppingCart;
 import ba.unsa.etf.rpr.exception.LibraryException;
 
 import java.sql.ResultSet;
@@ -10,15 +9,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Shopping_CartDaoImpl extends AbstractDao<Shopping_cart> implements Shopping_CartDao{
-    private static  Shopping_CartDaoImpl instance = null;
-    private Shopping_CartDaoImpl() {
+public class ShoppingCartDaoImpl extends AbstractDao<ShoppingCart> implements ShoppingCartDao {
+    private static ShoppingCartDaoImpl instance = null;
+    private ShoppingCartDaoImpl() {
         super("categories");
     }
 
-    public static Shopping_CartDaoImpl getInstance(){
+    public static ShoppingCartDaoImpl getInstance(){
         if(instance==null)
-            instance = new Shopping_CartDaoImpl();
+            instance = new ShoppingCartDaoImpl();
         return instance;
     }
 
@@ -27,24 +26,24 @@ public class Shopping_CartDaoImpl extends AbstractDao<Shopping_cart> implements 
             instance=null;
     }
 
-    public Shopping_CartDaoImpl(String tableName) {
+    public ShoppingCartDaoImpl(String tableName) {
         super(tableName);
     }
 
     @Override
-    public Shopping_cart get(int id) throws LibraryException {
+    public ShoppingCart get(int id) throws LibraryException {
         return null;
     }
 
     @Override
-    public List<Shopping_cart> getAll() throws LibraryException {
+    public List<ShoppingCart> getAll() throws LibraryException {
         return null;
     }
 
     @Override
-    public Shopping_cart row2object(ResultSet rs) throws LibraryException {
+    public ShoppingCart row2object(ResultSet rs) throws LibraryException {
         try {
-            Shopping_cart shopping_cart = new Shopping_cart();
+            ShoppingCart shopping_cart = new ShoppingCart();
             shopping_cart.setId(rs.getInt("id"));
             shopping_cart.setMember_card_id(rs.getInt("member_card_id"));
             shopping_cart.setBook_id(rs.getInt("book_id"));
@@ -56,7 +55,7 @@ public class Shopping_CartDaoImpl extends AbstractDao<Shopping_cart> implements 
     }
 
     @Override
-    public Map<String, Object> object2row(Shopping_cart object) {
+    public Map<String, Object> object2row(ShoppingCart object) {
         Map<String, Object> row = new TreeMap<>();
         row.put("id", object.getId());
         row.put("member_card_id", object.getMember_card_id());

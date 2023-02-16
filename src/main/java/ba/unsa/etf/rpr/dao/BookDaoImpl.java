@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-import ba.unsa.etf.rpr.domain.Books;
+import ba.unsa.etf.rpr.domain.Book;
 import ba.unsa.etf.rpr.exception.LibraryException;
 
 import java.sql.ResultSet;
@@ -9,14 +9,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class BooksDaoImpl extends AbstractDao<Books> implements BooksDao {
-    private static  BooksDaoImpl instance = null;
-    private BooksDaoImpl() {
+public class BookDaoImpl extends AbstractDao<Book> implements BookDao {
+    private static BookDaoImpl instance = null;
+    private BookDaoImpl() {
         super("books");
     }
-    public static BooksDaoImpl getInstance(){
+    public static BookDaoImpl getInstance(){
         if(instance==null)
-            instance = new BooksDaoImpl();
+            instance = new BookDaoImpl();
         return instance;
     }
 
@@ -24,23 +24,23 @@ public class BooksDaoImpl extends AbstractDao<Books> implements BooksDao {
         if(instance!=null)
             instance=null;
     }
-    public BooksDaoImpl(String tableName) {
+    public BookDaoImpl(String tableName) {
         super(tableName);
     }
 
     @Override
-    public Books get(int id) throws LibraryException {
+    public Book get(int id) throws LibraryException {
         return null;
     }
     @Override
-    public List<Books> getAll() throws LibraryException {
+    public List<Book> getAll() throws LibraryException {
         return null;
     }
 
     @Override
-    public Books row2object(ResultSet rs) throws LibraryException {
+    public Book row2object(ResultSet rs) throws LibraryException {
         try {
-            Books book = new Books();
+            Book book = new Book();
             book.setId(rs.getInt("id"));
             book.setTitle(rs.getString("title"));
             book.setAuthor(rs.getString("author"));
@@ -52,7 +52,7 @@ public class BooksDaoImpl extends AbstractDao<Books> implements BooksDao {
     }
 
     @Override
-    public Map<String, Object> object2row(Books object) {
+    public Map<String, Object> object2row(Book object) {
         Map<String, Object> row = new TreeMap<>();
         row.put("id", object.getId());
         row.put("title", object.getTitle());

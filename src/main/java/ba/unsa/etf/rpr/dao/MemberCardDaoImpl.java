@@ -1,7 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-import ba.unsa.etf.rpr.domain.Books;
-import ba.unsa.etf.rpr.domain.Member_cards;
+import ba.unsa.etf.rpr.domain.MemberCard;
 import ba.unsa.etf.rpr.exception.LibraryException;
 
 import java.sql.ResultSet;
@@ -10,14 +9,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Members_cardsDaoImpl extends AbstractDao<Member_cards> implements Members_cardsDao{
-    private static  Members_cardsDaoImpl instance = null;
-    private Members_cardsDaoImpl() {super("categories");
+public class MemberCardDaoImpl extends AbstractDao<MemberCard> implements MemberCardDao {
+    private static MemberCardDaoImpl instance = null;
+    private MemberCardDaoImpl() {super("categories");
     }
 
-    public static Members_cardsDaoImpl getInstance(){
+    public static MemberCardDaoImpl getInstance(){
         if(instance==null)
-            instance = new Members_cardsDaoImpl();
+            instance = new MemberCardDaoImpl();
         return instance;
     }
 
@@ -26,24 +25,24 @@ public class Members_cardsDaoImpl extends AbstractDao<Member_cards> implements M
             instance=null;
     }
 
-    public Members_cardsDaoImpl(String tableName) {
+    public MemberCardDaoImpl(String tableName) {
         super(tableName);
     }
 
     @Override
-    public Member_cards get(int id) throws LibraryException {
+    public MemberCard get(int id) throws LibraryException {
         return null;
     }
 
     @Override
-    public List<Member_cards> getAll() throws LibraryException {
+    public List<MemberCard> getAll() throws LibraryException {
         return null;
     }
 
     @Override
-    public Member_cards row2object(ResultSet rs) throws LibraryException {
+    public MemberCard row2object(ResultSet rs) throws LibraryException {
         try {
-            Member_cards member_cards = new Member_cards();
+            MemberCard member_cards = new MemberCard();
             member_cards.setId(rs.getInt("id"));
             member_cards.setMember_id(rs.getInt("member_id"));
             member_cards.setActivation_date(rs.getDate("activation_date"));
@@ -55,7 +54,7 @@ public class Members_cardsDaoImpl extends AbstractDao<Member_cards> implements M
     }
 
     @Override
-    public Map<String, Object> object2row(Member_cards object) {
+    public Map<String, Object> object2row(MemberCard object) {
         Map<String, Object> row = new TreeMap<>();
         row.put("id", object.getId());
         row.put("member_id", object.getMember_id());

@@ -3,19 +3,19 @@ package ba.unsa.etf.rpr.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Members implements Idable, Serializable {
+public class Member implements Idable, Serializable {
     private int id;
     private String name;
     private String last_name;
     private String email;
 
-    public Members(int id, String name, String last_name, String email) {
+    public Member(int id, String name, String last_name, String email) {
         this.id = id;
         this.name = name;
         this.last_name = last_name;
         this.email = email;
     }
-public Members(){ }
+public Member(){ }
     public int getId() {
         return id;
     }
@@ -61,8 +61,8 @@ public Members(){ }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Members)) return false;
-        Members members = (Members) o;
+        if (!(o instanceof Member)) return false;
+        Member members = (Member) o;
         return getId() == members.getId() && Objects.equals(getName(), members.getName()) && Objects.equals(getLast_name(), members.getLast_name()) && Objects.equals(getEmail(), members.getEmail());
     }
 

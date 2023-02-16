@@ -1,4 +1,4 @@
 package ba.unsa.etf.rpr.business;
 
-public class BooksManager {
+public class MemberManager {
 }

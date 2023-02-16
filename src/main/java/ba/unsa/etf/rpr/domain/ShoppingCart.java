@@ -3,20 +3,20 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Shopping_cart implements Idable, Serializable {
+public class ShoppingCart implements Idable, Serializable {
     private int id;
     private int member_card_id;
     private int book_id;
     private Date buy_date;
 
-    public Shopping_cart(int id, int card_id, int member_id, Date buy_date) {
+    public ShoppingCart(int id, int card_id, int member_id, Date buy_date) {
         this.id = id;
         this.member_card_id = card_id;
         this.book_id = member_id;
         this.buy_date = buy_date;
     }
 
-    public Shopping_cart(){ }
+    public ShoppingCart(){ }
 
     public int getId() {
         return id;
@@ -63,8 +63,8 @@ public class Shopping_cart implements Idable, Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Shopping_cart)) return false;
-        Shopping_cart that = (Shopping_cart) o;
+        if (!(o instanceof ShoppingCart)) return false;
+        ShoppingCart that = (ShoppingCart) o;
         return getId() == that.getId() && Objects.equals(getMember_card_id(), that.getMember_card_id()) && Objects.equals(getBook_id(), that.getBook_id()) && Objects.equals(getBuy_date(), that.getBuy_date());
     }
 

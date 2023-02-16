@@ -5,30 +5,30 @@ package ba.unsa.etf.rpr.dao;
 
 public class DaoFactory {
 
-    private static final BooksDao booksDao = BooksDaoImpl.getInstance();
+    private static final BookDao booksDao = BookDaoImpl.getInstance();
 
-    private static final MembersDao membersDao = MembersDaoImpl.getInstance();
+    private static final MemberDao membersDao = MemberDaoImpl.getInstance();
 
-    private static final Members_cardsDao members_cardsDao = Members_cardsDaoImpl.getInstance();
+    private static final MemberCardDao members_cardsDao = MemberCardDaoImpl.getInstance();
 
-    private static final Shopping_CartDao shopping_cartDao = Shopping_CartDaoImpl.getInstance();
+    private static final ShoppingCartDao shopping_cartDao = ShoppingCartDaoImpl.getInstance();
 
     private DaoFactory(){
     }
 
-    public static BooksDao booksDao(){
+    public static BookDao booksDao(){
         return booksDao;
     }
 
-    public static MembersDao membersDao(){
+    public static MemberDao membersDao(){
         return membersDao;
     }
 
-    public static Members_cardsDao members_cardsDao(){
+    public static MemberCardDao members_cardsDao(){
         return members_cardsDao;
     }
 
-    public static Shopping_CartDao shopping_cartDao(){
+    public static ShoppingCartDao shopping_cartDao(){
         return shopping_cartDao;
     }
 
