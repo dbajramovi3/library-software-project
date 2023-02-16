@@ -69,9 +69,9 @@
          <children>
             <HBox alignment="CENTER" prefHeight="150.0" prefWidth="450.0">
                <children>
-                  <Label text="    Enter book name:">
+                  <Label prefHeight="27.0" prefWidth="174.0" text="    Enter book name:">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold Italic" size="18.0" />
                      </font>
                      <HBox.margin>
                         <Insets bottom="18.0" left="18.0" right="18.0" top="18.0" />
@@ -88,7 +88,7 @@
                <children>
                   <Label text="    Enter member card id:">
                      <font>
-                        <Font name="System Bold Italic" size="16.0" />
+                        <Font name="System Bold Italic" size="18.0" />
                      </font>
                      <HBox.margin>
                         <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
@@ -110,7 +110,7 @@
       </VBox>
    </center>
    <bottom>
-      <Button fx:id="registerBookid" defaultButton="true" mnemonicParsing="false" onAction="#registerBookAction" prefHeight="44.0" prefWidth="123.0" text="Register Book" BorderPane.alignment="TOP_CENTER">
+      <Button fx:id="registerBookid" defaultButton="true" mnemonicParsing="false" onAction="#registerBookAction" prefHeight="44.0" prefWidth="150.0" text="Register Book" BorderPane.alignment="TOP_CENTER">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
