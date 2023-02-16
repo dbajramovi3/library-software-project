@@ -4,6 +4,8 @@ import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.domain.Book;
 import ba.unsa.etf.rpr.exception.LibraryException;
 
+import java.util.List;
+
 public class BookManager {
     public Book add(Book book) throws LibraryException {
         if (book.getId() != 0){
@@ -14,5 +16,9 @@ public class BookManager {
         }catch (LibraryException e){
             throw e;
         }
+    }
+
+    public List<Book> getAll() throws LibraryException{
+        return DaoFactory.booksDao().getAll();
     }
 }
