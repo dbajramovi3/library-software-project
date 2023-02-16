@@ -26,7 +26,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
          <font>
-            <Font name="System Bold" size="20.0" />
+            <Font name="Bodoni MT Black Italic" size="24.0" />
          </font>
       </Label>
       <Button fx:id="closeId" mnemonicParsing="false" onAction="#closeAction" prefHeight="26.0" prefWidth="618.0" text="Close" GridPane.rowIndex="3" />
