@@ -142,7 +142,7 @@ Ovako je to moguce
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registerBook.fxml"));
         registerBookController controller = new registerBookController(enterBookNameid.getText(), enterMemberCardid.getText());
         loader.setController(controller);
-        stage.setTitle("Aplikacija");
+        stage.setTitle("Register Book");
         stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
         stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         stage.setResizable(false);
