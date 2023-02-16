@@ -56,4 +56,5 @@ public class BookDaoImpl extends AbstractDao<Book> implements BookDao {
     public List<Book> getByName(String name) throws LibraryException {
         return executeQuery("SELECT * FROM books WHERE title LIKE concat('%', ?, '%')", new Object[]{name});
     }
+
 }

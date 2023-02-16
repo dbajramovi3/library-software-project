@@ -21,4 +21,8 @@ public class BookManager {
     public List<Book> getAll() throws LibraryException{
         return DaoFactory.booksDao().getAll();
     }
+
+    public List<Book> getByName(String name) throws LibraryException {
+        return DaoFactory.booksDao().getByName(name);
+    }
 }
