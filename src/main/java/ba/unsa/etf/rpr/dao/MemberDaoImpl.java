@@ -32,11 +32,6 @@ public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
 
 
     @Override
-    public List<Member> getAll() throws LibraryException {
-        return null;
-    }
-
-    @Override
     public Member row2object(ResultSet rs) throws LibraryException {
         try {
             Member members = new Member();

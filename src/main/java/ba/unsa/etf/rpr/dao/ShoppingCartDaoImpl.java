@@ -30,10 +30,6 @@ public class ShoppingCartDaoImpl extends AbstractDao<ShoppingCart> implements Sh
         super(tableName);
     }
 
-    @Override
-    public List<ShoppingCart> getAll() throws LibraryException {
-        return null;
-    }
 
     @Override
     public ShoppingCart row2object(ResultSet rs) throws LibraryException {

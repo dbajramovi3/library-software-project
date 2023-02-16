@@ -29,11 +29,6 @@ public class BookDaoImpl extends AbstractDao<Book> implements BookDao {
     }
 
     @Override
-    public List<Book> getAll() throws LibraryException {
-        return null;
-    }
-
-    @Override
     public Book row2object(ResultSet rs) throws LibraryException {
         try {
             Book book = new Book();

@@ -30,11 +30,6 @@ public class MemberCardDaoImpl extends AbstractDao<MemberCard> implements Member
     }
 
     @Override
-    public List<MemberCard> getAll() throws LibraryException {
-        return null;
-    }
-
-    @Override
     public MemberCard row2object(ResultSet rs) throws LibraryException {
         try {
             MemberCard member_cards = new MemberCard();
@@ -58,26 +53,4 @@ public class MemberCardDaoImpl extends AbstractDao<MemberCard> implements Member
         return row;
     }
 
-    /*
-
-    @Override
-    public Member_cards getById(int id) throws LibraryException {
-        return null;
-    }
-
-    @Override
-    public Member_cards add(Member_cards member_cards) throws LibraryException {
-        return null;
-    }
-
-    @Override
-    public Member_cards update(Member_cards member_cards) throws LibraryException {
-        return null;
-    }
-
-    @Override
-    public void delete(int id) {
-
-    }
-    */
 }
