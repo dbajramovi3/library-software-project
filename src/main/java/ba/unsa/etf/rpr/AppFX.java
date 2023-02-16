@@ -20,6 +20,7 @@ public class AppFX extends Application {
         primaryStage.setTitle("Home Page");
         primaryStage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
         primaryStage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+        root.getStylesheets().add(getClass().getResource("/css/prozor.css").toExternalForm());
         primaryStage.setResizable(false);
         primaryStage.show();
     }
