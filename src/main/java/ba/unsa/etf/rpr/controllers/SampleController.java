@@ -94,7 +94,7 @@ Ovako je to moguce
         //Parent root = FXMLLoader.load(getClass().getResource("/fxml/addBook.fxml"));
         searchBookController controller = new searchBookController();
         loader.setController(controller);
-        stage.setTitle("Aplikacija");
+        stage.setTitle("Search Book");
         stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
         stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         stage.setResizable(false);
@@ -106,7 +106,7 @@ Ovako je to moguce
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/searchMember.fxml"));
         searchMemberController controller = new searchMemberController();
         loader.setController(controller);
-        stage.setTitle("Aplikacija");
+        stage.setTitle("Search Member");
         stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
         stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         stage.setResizable(false);
