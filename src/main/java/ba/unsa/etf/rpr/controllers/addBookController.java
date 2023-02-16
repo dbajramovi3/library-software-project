@@ -21,7 +21,8 @@ public class addBookController {
     public Button saveButtonId;
     public Button cancelButtonId;
     public TextField bookTitleId;
-    public TextField bookId;
+//    public TextField bookId;
+    public TextField currentBookHoldId;
     public TextField authorId;
     public Label neispravanTextId;
     private String title, id, author;
@@ -32,12 +33,12 @@ public class addBookController {
         Ovako izgleda zatvaranje nekog prozora
      */
     public void saveAction(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) bookId.getScene().getWindow();
+        Stage stage = (Stage) currentBookHoldId.getScene().getWindow();
         stage.close();
     }
 
     public void cancelAction(ActionEvent actionEvent) {
-        Stage stage = (Stage) bookId.getScene().getWindow();
+        Stage stage = (Stage) currentBookHoldId.getScene().getWindow();
         stage.close();
     }
 //Kada zelimo da vratimo podatke sa pomocne metode na glavnu moramo napraviti pomocnu metodu
@@ -46,7 +47,7 @@ public class addBookController {
         List<String> lista = new ArrayList<>();
         lista.add(bookTitleId.getText());
         lista.add(authorId.getText());
-        lista.add(bookId.getText());
+        lista.add(currentBookHoldId.getText());
         return lista;
     }
 
@@ -56,7 +57,7 @@ public class addBookController {
     //Napravit cemo da svaki id mora imati tacno 5 slova/karaktera/brojeva i to radimo pomocu initialize metode
     @FXML
     public void initialize(){
-        bookId.textProperty().addListener((obs, newValue, oldValue) -> {
+        currentBookHoldId.textProperty().addListener((obs, newValue, oldValue) -> {
             if(newValue.length()==4)
                 neispravanTextId.setText("");
             else
