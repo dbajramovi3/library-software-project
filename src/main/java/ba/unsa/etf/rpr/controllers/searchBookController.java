@@ -12,9 +12,14 @@ public class searchBookController {
     public TextField enterBookNameId;
     public Label labelId;
     public Button closeButtonId;
+    public Button searchBttn;
 
     public void closeAction(ActionEvent actionEvent) {
         Stage stage = (Stage) labelId.getScene().getWindow();
         stage.close();
+    }
+
+    public void searchBttnAction(ActionEvent actionEvent) {
+
     }
 }
