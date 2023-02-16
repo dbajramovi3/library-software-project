@@ -30,11 +30,6 @@ public class MemberCardDaoImpl extends AbstractDao<MemberCard> implements Member
     }
 
     @Override
-    public MemberCard get(int id) throws LibraryException {
-        return null;
-    }
-
-    @Override
     public List<MemberCard> getAll() throws LibraryException {
         return null;
     }

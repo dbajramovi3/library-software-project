@@ -29,10 +29,6 @@ public class BookDaoImpl extends AbstractDao<Book> implements BookDao {
     }
 
     @Override
-    public Book get(int id) throws LibraryException {
-        return null;
-    }
-    @Override
     public List<Book> getAll() throws LibraryException {
         return null;
     }
@@ -61,33 +57,4 @@ public class BookDaoImpl extends AbstractDao<Book> implements BookDao {
         return row;
     }
 
-
-
-
-
-
-
-
-
-/*
-    @Override
-    public Books getById(int id) throws LibraryException {
-        return null;
-    }
-
-    @Override
-    public Books add(Books book) throws LibraryException {
-        return null;
-    }
-
-    @Override
-    public Books update(Books book) throws LibraryException {
-        return null;
-    }
-
-    @Override
-    public void delete(int id) {
-
-    }
-    */
 }

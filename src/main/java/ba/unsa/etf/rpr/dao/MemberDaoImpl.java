@@ -30,10 +30,6 @@ public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
         super(tableName);
     }
 
-    @Override
-    public Member get(int id) throws LibraryException {
-        return null;
-    }
 
     @Override
     public List<Member> getAll() throws LibraryException {
@@ -64,29 +60,4 @@ public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
         return row;
     }
 
-
-
-    /*
-    @Override
-    public Members getById(int id) throws LibraryException {
-        return null;
-    }
-
-
-    @Override
-    public Members add(Members members) throws LibraryException {
-        return null;
-    }
-
-    @Override
-    public Members update(Members members) throws LibraryException {
-        return null;
-    }
-
-    @Override
-    public void delete(int id) {
-
-    }
-
-     */
 }

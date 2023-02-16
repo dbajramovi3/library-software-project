@@ -31,11 +31,6 @@ public class ShoppingCartDaoImpl extends AbstractDao<ShoppingCart> implements Sh
     }
 
     @Override
-    public ShoppingCart get(int id) throws LibraryException {
-        return null;
-    }
-
-    @Override
     public List<ShoppingCart> getAll() throws LibraryException {
         return null;
     }
@@ -64,27 +59,4 @@ public class ShoppingCartDaoImpl extends AbstractDao<ShoppingCart> implements Sh
         return row;
     }
 
-
-
-/*
-    @Override
-    public Shopping_cart getById(int id) throws LibraryException {
-        return null;
-    }
-
-
-    @Override
-    public Shopping_cart add(Shopping_cart shopping_cart) throws LibraryException {
-        return null;
-    }
-
-    @Override
-    public Shopping_cart update(Shopping_cart shopping_cart) throws LibraryException {
-        return null;
-    }
-
-    @Override
-    public void delete(int id) {
-    }
-    */
 }
