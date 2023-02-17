@@ -21,10 +21,11 @@ public class addMemberController {
     private MemberManager memberManager = new MemberManager();
 
     public void saveAction(ActionEvent actionEvent) {
+
      Member member = new Member();
+     member.setId(Integer.parseInt(memberId.getText()));
      member.setName(nameId.getText());
      member.setLast_name(lastNameId.getText());
-     member.setId(Integer.parseInt(memberId.getText()));
      member.setEmail(emailId.getText());
      try{
          memberManager.add(member);

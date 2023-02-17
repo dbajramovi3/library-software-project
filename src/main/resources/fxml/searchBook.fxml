@@ -48,7 +48,7 @@
             <Button fx:id="searchBttn" mnemonicParsing="false" onAction="#searchBttnAction" text="Search" />
          </children>
       </HBox>
-      <Label fx:id="labelId" alignment="CENTER" contentDisplay="CENTER" prefHeight="90.0" prefWidth="600.0" text="Label" textFill="RED" GridPane.rowIndex="3">
+      <Label fx:id="labelId" alignment="CENTER" contentDisplay="CENTER" prefHeight="90.0" prefWidth="600.0" textFill="RED" GridPane.rowIndex="3">
          <font>
             <Font size="24.0" />
          </font>

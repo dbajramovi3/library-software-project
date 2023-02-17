@@ -35,12 +35,7 @@
             <Font name="Bodoni MT Black Italic" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="enterMemberNameId" prefHeight="53.0" prefWidth="460.0" GridPane.rowIndex="2">
-         <GridPane.margin>
-            <Insets bottom="40.0" left="40.0" right="40.0" top="20.0" />
-         </GridPane.margin>
-      </TextField>
-      <Label fx:id="labelId" alignment="CENTER" contentDisplay="CENTER" prefHeight="90.0" prefWidth="600.0" text="Label" textFill="RED" GridPane.rowIndex="3">
+      <Label fx:id="labelId" alignment="CENTER" contentDisplay="CENTER" prefHeight="90.0" prefWidth="600.0" textFill="RED" GridPane.rowIndex="3">
          <font>
             <Font size="24.0" />
          </font>
@@ -73,5 +68,19 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </GridPane.margin>
       </Button>
+      <HBox alignment="CENTER" prefHeight="98.0" prefWidth="600.0" GridPane.rowIndex="2">
+         <children>
+            <TextField fx:id="enterMNameId" prefHeight="26.0" prefWidth="441.0">
+               <HBox.margin>
+                  <Insets bottom="20.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="searchBttn" mnemonicParsing="false" onAction="#searchBttnAction" text="Search">
+               <HBox.margin>
+                  <Insets bottom="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
    </children>
 </GridPane>
