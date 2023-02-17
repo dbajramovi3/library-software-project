@@ -16,14 +16,10 @@ public class addMemberController {
     public TextField nameId;
     public TextField lastNameId;
     public TextField emailId;
-    public TextField memberId;
-    public Label neispravanTextId;
     private MemberManager memberManager = new MemberManager();
 
     public void saveAction(ActionEvent actionEvent) {
-
      Member member = new Member();
-     member.setId(Integer.parseInt(memberId.getText()));
      member.setName(nameId.getText());
      member.setLast_name(lastNameId.getText());
      member.setEmail(emailId.getText());
@@ -33,27 +29,13 @@ public class addMemberController {
          System.out.println("Exception in saveAction method in addMemberController");
          throw new RuntimeException(e);
      }
-        Stage stage = (Stage) memberId.getScene().getWindow();
+        Stage stage = (Stage) emailId.getScene().getWindow();
         stage.close();
     }
 
     public void cancelAction(ActionEvent actionEvent) {
-        Stage stage = (Stage) memberId.getScene().getWindow();
+        Stage stage = (Stage) emailId.getScene().getWindow();
         stage.close();
     }
 
-    public addMemberController() {
-
-    }
-//initialize metoda prilikom unosa id za member, kao i sto je za book jer id MORA imati 5 karaktera
-
-    @FXML
-    public void initialize(){
-        memberId.textProperty().addListener((obs, newValue, oldValue) -> {
-            if(newValue.length()==4)
-                neispravanTextId.setText("");
-            else
-                neispravanTextId.setText("Id mora imati 5 karaktera!");
-        });
-    }
 }

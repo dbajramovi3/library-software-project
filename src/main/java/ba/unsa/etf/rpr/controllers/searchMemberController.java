@@ -1,8 +1,7 @@
 package ba.unsa.etf.rpr.controllers;
 
-import ba.unsa.etf.rpr.business.BookManager;
+
 import ba.unsa.etf.rpr.business.MemberManager;
-import ba.unsa.etf.rpr.domain.Book;
 import ba.unsa.etf.rpr.domain.Member;
 import ba.unsa.etf.rpr.exception.LibraryException;
 import javafx.event.ActionEvent;
