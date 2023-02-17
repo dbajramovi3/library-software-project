@@ -55,4 +55,8 @@ public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
         return row;
     }
 
+    @Override
+    public List<Member> getByName(String name) throws LibraryException {
+        return executeQuery("SELECT * FROM books WHERE title LIKE concat('%', ?, '%')", new Object[]{name});
+    }
 }
