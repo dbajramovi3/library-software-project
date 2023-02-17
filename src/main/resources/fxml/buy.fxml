@@ -21,14 +21,6 @@
     <RowConstraints maxHeight="362.00000228881834" minHeight="10.0" prefHeight="362.00000228881834" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <TableView prefHeight="362.0" prefWidth="570.0" GridPane.rowIndex="1">
-        <columns>
-          <TableColumn prefWidth="75.0" text="id" />
-          <TableColumn prefWidth="75.0" text="member id" />
-            <TableColumn prefWidth="75.0" text="book id" />
-            <TableColumn prefWidth="75.0" text="buy date" />
-        </columns>
-      </TableView>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="438.0" text="Table">
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -42,9 +34,9 @@
       </Label>
       <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="162.0" text="Button">
+            <Button fx:id="deleteId" mnemonicParsing="false" onAction="#deleteAction" prefHeight="46.0" prefWidth="162.0" text="Delete">
                <HBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="300.0" />
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="150.0" />
                </HBox.margin>
                <padding>
                   <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
@@ -52,5 +44,13 @@
             </Button>
          </children>
       </HBox>
+      <TableView fx:id="tabelView" prefHeight="362.0" prefWidth="570.0" GridPane.rowIndex="1">
+        <columns>
+          <TableColumn prefWidth="75.0" text="id" />
+          <TableColumn prefWidth="75.0" text="member id" />
+            <TableColumn prefWidth="75.0" text="book id" />
+            <TableColumn prefWidth="75.0" text="buy date" />
+        </columns>
+      </TableView>
    </children>
 </GridPane>
