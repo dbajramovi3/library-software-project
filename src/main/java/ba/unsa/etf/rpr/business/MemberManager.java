@@ -3,6 +3,7 @@ package ba.unsa.etf.rpr.business;
 import ba.unsa.etf.rpr.dao.DaoFactory;
 
 
+import ba.unsa.etf.rpr.domain.Book;
 import ba.unsa.etf.rpr.domain.Member;
 import ba.unsa.etf.rpr.exception.LibraryException;
 
@@ -27,4 +28,22 @@ public class MemberManager {
     public List<Member> getByName(String name) throws LibraryException {
         return DaoFactory.membersDao().getByName(name);
     }
+
+    public Member update(Member member) throws LibraryException {
+        try {
+            return DaoFactory.membersDao().update(member);
+        } catch (LibraryException e) {
+            throw e;
+        }
+    }
+
+    public void delete(int member) throws LibraryException {
+        try {
+            DaoFactory.membersDao().delete(member);
+        } catch (LibraryException e) {
+            throw e;
+        }
+    }
+
+
 }

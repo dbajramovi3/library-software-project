@@ -50,12 +50,8 @@ public Member(){ }
 
     @Override
     public String toString() {
-        return "Members{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", last_name='" + last_name + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "  " + id + "   "
+                + name + "  " + last_name + "   " + email;
     }
 
     @Override

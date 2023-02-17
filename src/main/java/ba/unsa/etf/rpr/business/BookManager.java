@@ -25,4 +25,21 @@ public class BookManager {
     public List<Book> getByName(String name) throws LibraryException {
         return DaoFactory.booksDao().getByName(name);
     }
+
+    public Book update(Book book) throws LibraryException {
+        try {
+            return DaoFactory.booksDao().update(book);
+        } catch (LibraryException e) {
+            throw e;
+        }
+    }
+
+    public void delete(int book) throws LibraryException {
+        try {
+            DaoFactory.booksDao().delete(book);
+        } catch (LibraryException e) {
+            throw e;
+        }
+    }
+
 }
