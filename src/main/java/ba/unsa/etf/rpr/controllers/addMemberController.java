@@ -1,6 +1,8 @@
 package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.business.MemberManager;
+import ba.unsa.etf.rpr.domain.Member;
+import ba.unsa.etf.rpr.exception.LibraryException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -19,8 +21,18 @@ public class addMemberController {
     private MemberManager memberManager = new MemberManager();
 
     public void saveAction(ActionEvent actionEvent) {
-        Stage stage = (Stage) memberId.getScene().getWindow();
-        stage.close();
+     Member member = new Member();
+     member.setId(Integer.parseInt(memberId.getText()));
+     member.setEmail(emailId.getText());
+     member.setName(nameId.getText());
+     member.setLast_name(lastNameId.getText());
+     try{
+         memberManager.add(member);
+     } catch (LibraryException e) {
+         System.out.println("Exception in saveAction method in addBookController");
+         throw new RuntimeException(e);
+     }
+
 
     }
 
