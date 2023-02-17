@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.business.BookManager;
+import ba.unsa.etf.rpr.business.MemberManager;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -30,7 +32,9 @@ public class SampleController {
     public Button searchMemberid;
     public Button searchBookButtonid;
 
-    public ListView listView;
+    private BookManager bookManager = new BookManager();
+
+    private MemberManager memberManager = new MemberManager();
 
     /* Napravili smo akciju za addBookAction s tim da smo je povezali tako da ne moramo povezivat putme addBook.fxml u tekst kodu
     Ovo je prva akcija koju smo napravili i nije nam trebao listener jer nismo unosili podatke iz razloga sto app ne zahtjeva log in formu
@@ -139,6 +143,7 @@ Ovako je to moguce
     }
 
     public void registerBookAction(ActionEvent actionEvent) throws IOException {
+
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registerBook.fxml"));
         registerBookController controller = new registerBookController(enterBookNameid.getText(), enterMemberEmailId.getText());
