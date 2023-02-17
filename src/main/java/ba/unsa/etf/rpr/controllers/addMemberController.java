@@ -32,8 +32,8 @@ public class addMemberController {
          System.out.println("Exception in saveAction method in addBookController");
          throw new RuntimeException(e);
      }
-
-
+        Stage stage = (Stage) memberId.getScene().getWindow();
+        stage.close();
     }
 
     public void cancelAction(ActionEvent actionEvent) {
