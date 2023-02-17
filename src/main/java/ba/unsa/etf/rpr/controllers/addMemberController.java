@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.business.MemberManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,6 +16,7 @@ public class addMemberController {
     public TextField emailId;
     public TextField memberId;
     public Label neispravanTextId;
+    private MemberManager memberManager = new MemberManager();
 
     public void saveAction(ActionEvent actionEvent) {
         Stage stage = (Stage) memberId.getScene().getWindow();
