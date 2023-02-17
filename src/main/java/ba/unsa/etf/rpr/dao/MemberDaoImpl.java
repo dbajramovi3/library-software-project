@@ -12,7 +12,7 @@ import java.util.TreeMap;
 public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
     private static MemberDaoImpl instance = null;
     private MemberDaoImpl() {
-        super("categories");
+        super("members");
     }
 
     public static MemberDaoImpl getInstance(){
@@ -57,6 +57,6 @@ public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
 
     @Override
     public List<Member> getByName(String name) throws LibraryException {
-        return executeQuery("SELECT * FROM books WHERE title LIKE concat('%', ?, '%')", new Object[]{name});
+        return executeQuery("SELECT * FROM members WHERE name LIKE concat('%', ?, '%')", new Object[]{name});
     }
 }

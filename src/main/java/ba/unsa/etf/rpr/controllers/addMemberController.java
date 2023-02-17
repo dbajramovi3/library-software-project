@@ -22,14 +22,14 @@ public class addMemberController {
 
     public void saveAction(ActionEvent actionEvent) {
      Member member = new Member();
-     member.setId(Integer.parseInt(memberId.getText()));
-     member.setEmail(emailId.getText());
      member.setName(nameId.getText());
      member.setLast_name(lastNameId.getText());
+     member.setId(Integer.parseInt(memberId.getText()));
+     member.setEmail(emailId.getText());
      try{
          memberManager.add(member);
      } catch (LibraryException e) {
-         System.out.println("Exception in saveAction method in addBookController");
+         System.out.println("Exception in saveAction method in addMemberController");
          throw new RuntimeException(e);
      }
         Stage stage = (Stage) memberId.getScene().getWindow();

@@ -12,7 +12,7 @@ import java.util.TreeMap;
 public class ShoppingCartDaoImpl extends AbstractDao<ShoppingCart> implements ShoppingCartDao {
     private static ShoppingCartDaoImpl instance = null;
     private ShoppingCartDaoImpl() {
-        super("categories");
+        super("shopping_cart");
     }
 
     public static ShoppingCartDaoImpl getInstance(){

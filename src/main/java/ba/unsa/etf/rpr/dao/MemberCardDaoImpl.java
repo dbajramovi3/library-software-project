@@ -12,7 +12,7 @@ import java.util.TreeMap;
 
 public class MemberCardDaoImpl extends AbstractDao<MemberCard> implements MemberCardDao {
     private static MemberCardDaoImpl instance = null;
-    private MemberCardDaoImpl() {super("categories");
+    private MemberCardDaoImpl() {super("member_cards");
     }
 
     public static MemberCardDaoImpl getInstance(){
