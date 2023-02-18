@@ -33,6 +33,6 @@ public interface Dao<T> {
     /**
      * Delete of item from database with given id
      */
-    void delete(T id) throws LibraryException;
+    void delete(int id) throws LibraryException;
 }
 

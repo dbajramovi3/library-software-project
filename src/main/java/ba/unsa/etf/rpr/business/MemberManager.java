@@ -37,7 +37,7 @@ public class MemberManager {
         }
     }
 
-    public void delete(Member member) throws LibraryException {
+    public void delete(int member) throws LibraryException {
         try {
             DaoFactory.membersDao().delete(member);
         } catch (LibraryException e) {

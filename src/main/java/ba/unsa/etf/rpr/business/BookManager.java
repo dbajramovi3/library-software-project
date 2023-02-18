@@ -34,7 +34,7 @@ public class BookManager {
         }
     }
 
-    public void delete(Book book) throws LibraryException {
+    public void delete(int book) throws LibraryException {
         try {
             DaoFactory.booksDao().delete(book);
         } catch (LibraryException e) {
@@ -45,7 +45,7 @@ public class BookManager {
     public void decreaseBookCount(Book book) throws LibraryException {
         int bookCount = book.getCurrent_book_hold();
         if (bookCount <= 0) {
-            delete(book);
+            delete(book.getId());
         } else {
             book.setCurrent_book_hold(bookCount - 1);
             update(book);

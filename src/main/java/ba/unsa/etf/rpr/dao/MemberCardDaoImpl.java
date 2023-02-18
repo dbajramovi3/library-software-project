@@ -51,8 +51,5 @@ public class MemberCardDaoImpl extends AbstractDao<MemberCard> implements Member
         return row;
     }
 
-    @Override
-    public void delete(MemberCard id) throws LibraryException {
 
-    }
 }

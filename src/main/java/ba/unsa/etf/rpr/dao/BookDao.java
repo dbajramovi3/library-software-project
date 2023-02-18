@@ -8,4 +8,6 @@ import java.util.List;
 public interface BookDao extends Dao<Book>{
     public List<Book> getByName(String name) throws LibraryException;
 
+    public Book getByName2(String name) throws LibraryException;
+
 }

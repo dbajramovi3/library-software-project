@@ -1,5 +1,5 @@
 package ba.unsa.etf.rpr.controllers;
-
+import java.util.List;
 import ba.unsa.etf.rpr.business.BookManager;
 import ba.unsa.etf.rpr.business.MemberManager;
 import ba.unsa.etf.rpr.domain.Book;
@@ -146,9 +146,9 @@ Ovako je to moguce
         String memberEmail = enterMemberEmailId.getText().trim();
 
         // check if the book and member exist in the database
-        Book book = (Book) bookManager.getByName(bookName);
-        Member member = (Member) memberManager.getByEmail(memberEmail);
-        if (book == null || member == null) {
+        List<Book> books =  bookManager.getByName(bookName);
+        List<Member> members =  memberManager.getByEmail(memberEmail);
+        if (books == null || members == null || books.size() == 0 || members.size() == 0) {
             // show an alert if either the book or member does not exist
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -156,7 +156,7 @@ Ovako je to moguce
             alert.setContentText("Error: this book or email is not existing");
             alert.showAndWait();
         }else {
-            bookManager.decreaseBookCount(book);
+            bookManager.decreaseBookCount(books.get(0));
             Stage stage = new Stage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registerBook.fxml"));
             registerBookController controller = new registerBookController(enterBookNameid.getText(), enterMemberEmailId.getText());
