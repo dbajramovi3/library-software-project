@@ -30,9 +30,9 @@ public class ShoppingCartManager {
         }
     }
 
-    public void delete(int member) throws LibraryException {
+    public void delete(int shoppingCart) throws LibraryException {
         try {
-            DaoFactory.membersDao().delete(member);
+            DaoFactory.shopping_cartDao().delete(shoppingCart);
         } catch (LibraryException e) {
             throw e;
         }
