@@ -142,20 +142,32 @@ Ovako je to moguce
 
     public void registerBookAction(ActionEvent actionEvent) throws IOException, LibraryException {
         try{
+
             String bookName = enterBookNameid.getText().trim();
         String memberEmail = enterMemberEmailId.getText().trim();
 
+        if (bookName.isEmpty() || memberEmail.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Empty Fields");
+                alert.setContentText("Please enter book name and member email.");
+                alert.showAndWait();
+                return;
+            }
        // check if the book and member exist in the database
         List<Book> books =  bookManager.getByName(bookName);
         List<Member> members =  memberManager.getByEmail(memberEmail);
-        if (books == null || members == null || books.size() == 0 || members.size() == 0) {
+
+        if (books == null || members == null || books.size() == 0 || members.size() == 0 ) {
             // show an alert if either the book or member does not exist
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Error: this book or email is not existing");
+            alert.setHeaderText("Wrong information");
+            alert.setResizable(false);
+            alert.setContentText("Error: You didn't enter correct information!");
             alert.showAndWait();
-        }else {
+        }
+        else {
             bookManager.decreaseBookCount(books.get(0));
             Stage stage = new Stage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registerBook.fxml"));
@@ -170,8 +182,8 @@ Ovako je to moguce
     }catch(Exception e){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Knjiga ne postoji");
+            alert.setHeaderText("Error");
+            alert.setContentText("Error");
             alert.showAndWait();
         }
     }
