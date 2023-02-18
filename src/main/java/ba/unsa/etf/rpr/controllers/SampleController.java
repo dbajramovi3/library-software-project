@@ -141,11 +141,11 @@ Ovako je to moguce
     }
 
     public void registerBookAction(ActionEvent actionEvent) throws IOException, LibraryException {
-
-        String bookName = enterBookNameid.getText().trim();
+        try{
+            String bookName = enterBookNameid.getText().trim();
         String memberEmail = enterMemberEmailId.getText().trim();
 
-        // check if the book and member exist in the database
+       // check if the book and member exist in the database
         List<Book> books =  bookManager.getByName(bookName);
         List<Member> members =  memberManager.getByEmail(memberEmail);
         if (books == null || members == null || books.size() == 0 || members.size() == 0) {
@@ -166,6 +166,13 @@ Ovako je to moguce
             stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(false);
             stage.show();
+        }
+    }catch(Exception e){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Knjiga ne postoji");
+            alert.showAndWait();
         }
     }
 
