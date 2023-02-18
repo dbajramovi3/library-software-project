@@ -24,9 +24,13 @@ public class addBookController {
     public TextField authorId;
     private BookManager bookManager = new BookManager();
 
-    public addBookController() {
-    }
+
     public void saveAction(ActionEvent actionEvent){
+
+        String bookTitle = bookTitleId.getText().trim();
+        String author = authorId.getText().trim();
+        String currentBookHold = currentBookHoldId.getText().trim();
+
         Book book = new Book();
         book.setTitle(bookTitleId.getText());
         book.setAuthor(authorId.getText());
@@ -39,6 +43,8 @@ public class addBookController {
         }
         Stage stage = (Stage) currentBookHoldId.getScene().getWindow();
         stage.close();
+    }
+    public addBookController() {
     }
 
     public void cancelAction(ActionEvent actionEvent) {
