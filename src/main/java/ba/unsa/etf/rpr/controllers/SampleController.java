@@ -146,11 +146,27 @@ Ovako je to moguce
             String bookName = enterBookNameid.getText().trim();
         String memberEmail = enterMemberEmailId.getText().trim();
 
-        if (bookName.isEmpty() || memberEmail.isEmpty()) {
+        if (bookName.isEmpty() && memberEmail.isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error");
+                alert.setTitle("Error: You didn't enter a book name or member email!");
                 alert.setHeaderText("Empty Fields");
                 alert.setContentText("Please enter book name and member email.");
+                alert.showAndWait();
+                return;
+            }
+            if (bookName.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error: You didn't enter a book name!");
+                alert.setHeaderText("Empty Fields");
+                alert.setContentText("Please enter book name.");
+                alert.showAndWait();
+                return;
+            }
+            if (memberEmail.isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error: You didn't enter member email!");
+                alert.setHeaderText("Empty Fields");
+                alert.setContentText("Please enter member email.");
                 alert.showAndWait();
                 return;
             }
