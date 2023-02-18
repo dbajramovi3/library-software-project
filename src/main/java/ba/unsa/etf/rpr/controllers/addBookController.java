@@ -5,6 +5,7 @@ import ba.unsa.etf.rpr.domain.Book;
 import ba.unsa.etf.rpr.exception.LibraryException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -25,25 +26,46 @@ public class addBookController {
     private BookManager bookManager = new BookManager();
 
 
-    public void saveAction(ActionEvent actionEvent){
+    public void saveAction(ActionEvent actionEvent) {
 
-        String bookTitle = bookTitleId.getText().trim();
-        String author = authorId.getText().trim();
-        String currentBookHold = currentBookHoldId.getText().trim();
+            String bookTitle = bookTitleId.getText().trim();
+            String author = authorId.getText().trim();
+            String currentBookHold = currentBookHoldId.getText().trim();
 
-        Book book = new Book();
-        book.setTitle(bookTitleId.getText());
-        book.setAuthor(authorId.getText());
-        book.setCurrent_book_hold(Integer.parseInt(currentBookHoldId.getText()));
-        try {
-            bookManager.add(book);
-        } catch (LibraryException e) {
-            System.out.println("Exception in saveAction method in addBookController");
-            throw new RuntimeException(e);
+        if (bookTitle.isEmpty() || author.isEmpty() || currentBookHold.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Missing Information");
+            alert.setContentText("Please enter book title, author, and current book hold.");
+            alert.showAndWait();
+            return;
         }
-        Stage stage = (Stage) currentBookHoldId.getScene().getWindow();
-        stage.close();
-    }
+
+            Book book = new Book();
+            book.setTitle(bookTitleId.getText());
+            book.setAuthor(authorId.getText());
+            book.setCurrent_book_hold(Integer.parseInt(currentBookHoldId.getText()));
+            try {
+                bookManager.add(book);
+            } catch (LibraryException e) {
+                System.out.println("Exception in saveAction method in addBookController");
+                throw new RuntimeException(e);
+            }
+            Stage stage = (Stage) currentBookHoldId.getScene().getWindow();
+            stage.close();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
     public addBookController() {
     }
 
