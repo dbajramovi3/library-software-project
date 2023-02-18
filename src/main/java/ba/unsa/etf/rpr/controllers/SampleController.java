@@ -2,22 +2,18 @@ package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.business.BookManager;
 import ba.unsa.etf.rpr.business.MemberManager;
-import javafx.collections.FXCollections;
+import ba.unsa.etf.rpr.exception.LibraryException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.util.List;
-import java.util.ResourceBundle;
-
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
 public class SampleController {
@@ -142,17 +138,29 @@ Ovako je to moguce
         stage.show();
     }
 
-    public void registerBookAction(ActionEvent actionEvent) throws IOException {
+    public void registerBookAction(ActionEvent actionEvent) throws IOException, LibraryException {
 
-        Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registerBook.fxml"));
-        registerBookController controller = new registerBookController(enterBookNameid.getText(), enterMemberEmailId.getText());
-        loader.setController(controller);
-        stage.setTitle("Register Book");
-        stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
-        stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-        stage.setResizable(false);
-        stage.show();
+        String bookName = enterBookNameid.getText().trim();
+        String memberEmail = enterMemberEmailId.getText().trim();
+
+        if(bookManager.getByName(bookName) == null || memberManager.getByName(memberEmail) == null){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Error: this book or email is not existing");
+            alert.showAndWait();
+        }else {
+
+            Stage stage = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registerBook.fxml"));
+            registerBookController controller = new registerBookController(enterBookNameid.getText(), enterMemberEmailId.getText());
+            loader.setController(controller);
+            stage.setTitle("Register Book");
+            stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
+            stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+        }
     }
 
     public void okAction(ActionEvent actionEvent) throws IOException {
