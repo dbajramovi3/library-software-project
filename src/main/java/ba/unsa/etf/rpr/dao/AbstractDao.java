@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
+import ba.unsa.etf.rpr.domain.Book;
 import ba.unsa.etf.rpr.domain.Idable;
 import ba.unsa.etf.rpr.exception.LibraryException;
 import java.sql.*;
@@ -71,7 +72,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         return executeQuery("SELECT * FROM "+ tableName, null);
     }
 
-    public void delete(int id) throws LibraryException {
+    public void delete(Book id) throws LibraryException {
         String sql = "DELETE FROM "+tableName+" WHERE id = ?";
         try{
             PreparedStatement stmt = getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);

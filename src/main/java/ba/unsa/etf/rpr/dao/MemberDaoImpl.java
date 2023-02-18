@@ -59,4 +59,9 @@ public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
     public List<Member> getByName(String name) throws LibraryException {
         return executeQuery("SELECT * FROM members WHERE name LIKE concat('%', ?, '%')", new Object[]{name});
     }
+
+    @Override
+    public void delete(Member id) throws LibraryException {
+
+    }
 }

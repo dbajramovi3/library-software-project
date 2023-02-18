@@ -67,4 +67,5 @@ public class Book implements Idable, Serializable {
     public int hashCode() {
         return Objects.hash(getId(), getTitle(), getAuthor(), getCurrent_book_hold());
     }
+
 }

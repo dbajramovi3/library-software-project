@@ -30,7 +30,7 @@ public class MemberCardManager {
         }
     }
 
-    public void delete(int memberCard) throws LibraryException {
+    public void delete(MemberCard memberCard) throws LibraryException {
         try {
             DaoFactory.members_cardsDao().delete(memberCard);
         } catch (LibraryException e) {

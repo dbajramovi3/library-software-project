@@ -55,4 +55,8 @@ public class ShoppingCartDaoImpl extends AbstractDao<ShoppingCart> implements Sh
         return row;
     }
 
+    @Override
+    public void delete(ShoppingCart id) throws LibraryException {
+
+    }
 }

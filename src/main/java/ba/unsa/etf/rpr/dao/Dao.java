@@ -1,7 +1,7 @@
 package ba.unsa.etf.rpr.dao;
+import ba.unsa.etf.rpr.domain.Book;
 import ba.unsa.etf.rpr.exception.LibraryException;
 import java.util.List;
-import java.sql.SQLException;
 
 
 public interface Dao<T> {
@@ -33,6 +33,6 @@ public interface Dao<T> {
     /**
      * Delete of item from database with given id
      */
-    void delete(int id) throws LibraryException;
+    void delete(T id) throws LibraryException;
 }
 
