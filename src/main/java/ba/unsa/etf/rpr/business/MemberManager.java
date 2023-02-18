@@ -25,6 +25,9 @@ public class MemberManager {
     public List<Member> getByName(String name) throws LibraryException {
         return DaoFactory.membersDao().getByName(name);
     }
+    public List<Member> getByEmail(String email) throws LibraryException {
+        return DaoFactory.membersDao().getByEmail(email);
+    }
 
     public Member update(Member member) throws LibraryException {
         try {

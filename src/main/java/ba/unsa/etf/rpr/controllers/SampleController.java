@@ -2,6 +2,8 @@ package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.business.BookManager;
 import ba.unsa.etf.rpr.business.MemberManager;
+import ba.unsa.etf.rpr.domain.Book;
+import ba.unsa.etf.rpr.domain.Member;
 import ba.unsa.etf.rpr.exception.LibraryException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -143,14 +145,18 @@ Ovako je to moguce
         String bookName = enterBookNameid.getText().trim();
         String memberEmail = enterMemberEmailId.getText().trim();
 
-        if(bookManager.getByName(bookName) == null || memberManager.getByName(memberEmail) == null){
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        // check if the book and member exist in the database
+        Book book = (Book) bookManager.getByName(bookName);
+        Member member = (Member) memberManager.getByEmail(memberEmail);
+        if (book == null || member == null) {
+            // show an alert if either the book or member does not exist
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Error: this book or email is not existing");
             alert.showAndWait();
         }else {
-
+            bookManager.decreaseBookCount(book);
             Stage stage = new Stage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registerBook.fxml"));
             registerBookController controller = new registerBookController(enterBookNameid.getText(), enterMemberEmailId.getText());

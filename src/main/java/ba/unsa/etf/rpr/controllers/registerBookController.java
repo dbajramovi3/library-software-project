@@ -17,7 +17,6 @@ public class registerBookController {
     }
 
     public void closeAction(ActionEvent actionEvent) {
-
         Stage stage = (Stage) bookId.getScene().getWindow();
         stage.close();
     }

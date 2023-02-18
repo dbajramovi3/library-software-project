@@ -61,6 +61,11 @@ public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
     }
 
     @Override
+    public List<Member> getByEmail(String email) throws LibraryException {
+        return executeQuery("SELECT * FROM members WHERE email LIKE concat('%', ?, '%')", new Object[]{email});
+    }
+
+    @Override
     public void delete(Member id) throws LibraryException {
 
     }
