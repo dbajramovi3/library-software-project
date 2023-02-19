@@ -26,7 +26,7 @@ public class addBookController {
     private BookManager bookManager = new BookManager();
 
 
-    public void saveAction(ActionEvent actionEvent) {
+    public void saveAction(ActionEvent actionEvent) throws LibraryException {
 
             String bookTitle = bookTitleId.getText().trim();
             String author = authorId.getText().trim();
@@ -70,8 +70,14 @@ public class addBookController {
             Stage stage = (Stage) currentBookHoldId.getScene().getWindow();
             stage.close();
         }
+
+
     private boolean isString(String str) {
-        return str.matches("[a-zA-Z]+");
+        if (str == null || str.trim().isEmpty()) {
+            return false;
+        }
+        String trimmedStr = str.trim().replaceAll("\\s+", "");
+        return trimmedStr.matches("[a-zA-Z]+");
     }
 
     private boolean isInteger(String str) {
