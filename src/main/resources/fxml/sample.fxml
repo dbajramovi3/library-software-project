@@ -128,7 +128,7 @@
       </Button>
    </bottom>
    <top>
-      <Label alignment="CENTER" prefHeight="46.0" prefWidth="654.0" text="Library-Managment System" BorderPane.alignment="CENTER">
+      <Label alignment="CENTER" prefHeight="46.0" prefWidth="654.0" text="Library-Management System" BorderPane.alignment="CENTER">
          <font>
             <Font name="Bodoni MT Black" size="24.0" />
          </font>
