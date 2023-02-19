@@ -1,6 +1,9 @@
 package ba.unsa.etf.rpr.business;
 
+import ba.unsa.etf.rpr.dao.BookDao;
 import ba.unsa.etf.rpr.dao.DaoFactory;
+import ba.unsa.etf.rpr.dao.MemberDao;
+import ba.unsa.etf.rpr.domain.Book;
 import ba.unsa.etf.rpr.domain.Member;
 import ba.unsa.etf.rpr.exception.LibraryException;
 
