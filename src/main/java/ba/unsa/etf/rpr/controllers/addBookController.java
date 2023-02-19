@@ -40,6 +40,22 @@ public class addBookController {
             alert.showAndWait();
             return;
         }
+        if (!isString(bookTitle) || !isString(author)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Wrong Information");
+            alert.setContentText("Please enter valid book title and author (strings only).");
+            alert.showAndWait();
+            return;
+        }
+        if (!isInteger(currentBookHold) || Integer.parseInt(currentBookHold) <= 0 || Integer.parseInt(currentBookHold) > 100) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Number Error");
+            alert.setContentText("Please enter a valid current book hold (integer between 1 and 100).");
+            alert.showAndWait();
+            return;
+        }
 
             Book book = new Book();
             book.setTitle(bookTitleId.getText());
@@ -54,16 +70,13 @@ public class addBookController {
             Stage stage = (Stage) currentBookHoldId.getScene().getWindow();
             stage.close();
         }
+    private boolean isString(String str) {
+        return str.matches("[a-zA-Z]+");
+    }
 
-
-
-
-
-
-
-
-
-
+    private boolean isInteger(String str) {
+        return str.matches("\\d+");
+    }
 
 
     public addBookController() {
