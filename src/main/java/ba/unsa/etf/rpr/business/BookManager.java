@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.business;
 
+import ba.unsa.etf.rpr.dao.AbstractDao;
+import ba.unsa.etf.rpr.dao.BookDao;
 import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.domain.Book;
 import ba.unsa.etf.rpr.exception.LibraryException;
@@ -51,5 +53,21 @@ public class BookManager {
             update(book);
         }
     }
+
+    public Book getBookByTitle(String title) throws LibraryException {
+        try {
+            BookDao bookDao = DaoFactory.booksDao();
+            List<Book> books = bookDao.getAll();
+            for (Book book : books) {
+                if (book.getTitle().equalsIgnoreCase(title)) {
+                    return book;
+                }
+            }
+            return null;
+        } catch (LibraryException e) {
+            throw e;
+        }
+    }
+
 
 }

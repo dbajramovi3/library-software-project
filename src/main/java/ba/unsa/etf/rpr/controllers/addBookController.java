@@ -56,6 +56,14 @@ public class addBookController {
             alert.showAndWait();
             return;
         }
+        if (bookManager.getBookByTitle(bookTitle) != null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Book Already Exists");
+            alert.setContentText("A book with the same title already exists.");
+            alert.showAndWait();
+            return;
+        }
 
             Book book = new Book();
             book.setTitle(bookTitleId.getText());

@@ -10,4 +10,5 @@ public interface BookDao extends Dao<Book>{
 
     public Book getByName2(String name) throws LibraryException;
 
+
 }
