@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.domain;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
@@ -7,9 +8,9 @@ public class ShoppingCart implements Idable, Serializable {
     private int id;
     private int member_card_id;
     private int book_id;
-    private Date buy_date;
+    private LocalDate buy_date;
 
-    public ShoppingCart(int id, int card_id, int member_id, Date buy_date) {
+    public ShoppingCart(int id, int card_id, int member_id, LocalDate buy_date) {
         this.id = id;
         this.member_card_id = card_id;
         this.book_id = member_id;
@@ -42,11 +43,11 @@ public class ShoppingCart implements Idable, Serializable {
         this.book_id = book_id;
     }
 
-    public Date getBuy_date() {
+    public LocalDate getBuy_date() {
         return buy_date;
     }
 
-    public void setBuy_date(Date buy_date) {
+    public void setBuy_date(LocalDate buy_date) {
         this.buy_date = buy_date;
     }
 
