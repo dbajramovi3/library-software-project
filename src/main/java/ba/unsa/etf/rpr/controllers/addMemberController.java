@@ -4,9 +4,7 @@ import ba.unsa.etf.rpr.business.MemberManager;
 import ba.unsa.etf.rpr.domain.Member;
 import ba.unsa.etf.rpr.exception.LibraryException;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -19,6 +17,12 @@ public class addMemberController {
     private MemberManager memberManager = new MemberManager();
 
     public void saveAction(ActionEvent actionEvent) {
+
+        String name = nameId.getText();
+        String lastName = lastNameId.getText();
+        String email = emailId.getText();
+
+
      Member member = new Member();
      member.setName(nameId.getText());
      member.setLast_name(lastNameId.getText());
