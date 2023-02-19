@@ -204,18 +204,6 @@ Ovako je to moguce
         }
     }
 
-    public void okAction(ActionEvent actionEvent) throws IOException {
-        Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/buy.fxml"));
-        buyController controller = new buyController();
-        loader.setController(controller);
-        stage.setTitle("Table");
-        stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
-        stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-        stage.setResizable(false);
-        stage.show();
-    }
-
     public SampleController(){
     }
 
