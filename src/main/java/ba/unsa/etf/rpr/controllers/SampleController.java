@@ -1,9 +1,16 @@
 package ba.unsa.etf.rpr.controllers;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import ba.unsa.etf.rpr.business.BookManager;
+import ba.unsa.etf.rpr.business.MemberCardManager;
 import ba.unsa.etf.rpr.business.MemberManager;
+import ba.unsa.etf.rpr.business.ShoppingCartManager;
+import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.domain.Book;
 import ba.unsa.etf.rpr.domain.Member;
+import ba.unsa.etf.rpr.domain.MemberCard;
+import ba.unsa.etf.rpr.domain.ShoppingCart;
 import ba.unsa.etf.rpr.exception.LibraryException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,6 +40,7 @@ public class SampleController {
     private BookManager bookManager = new BookManager();
 
     private MemberManager memberManager = new MemberManager();
+    ShoppingCartManager shoppingCartManager = new ShoppingCartManager();
 
     /* Napravili smo akciju za addBookAction s tim da smo je povezali tako da ne moramo povezivat putme addBook.fxml u tekst kodu
     Ovo je prva akcija koju smo napravili i nije nam trebao listener jer nismo unosili podatke iz razloga sto app ne zahtjeva log in formu
@@ -142,9 +150,8 @@ Ovako je to moguce
 
     public void registerBookAction(ActionEvent actionEvent) throws IOException, LibraryException {
         try{
-
             String bookName = enterBookNameid.getText().trim();
-        String memberEmail = enterMemberEmailId.getText().trim();
+            String memberEmail = enterMemberEmailId.getText().trim();
 
         if (bookName.isEmpty() && memberEmail.isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -154,27 +161,12 @@ Ovako je to moguce
                 alert.showAndWait();
                 return;
             }
-            if (bookName.isEmpty()) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error: You didn't enter a book name!");
-                alert.setHeaderText("Empty Fields");
-                alert.setContentText("Please enter book name.");
-                alert.showAndWait();
-                return;
-            }
-            if (memberEmail.isEmpty()) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error: You didn't enter member email!");
-                alert.setHeaderText("Empty Fields");
-                alert.setContentText("Please enter member email.");
-                alert.showAndWait();
-                return;
-            }
-       // check if the book and member exist in the database
+
         List<Book> books =  bookManager.getByName(bookName);
         List<Member> members =  memberManager.getByEmail(memberEmail);
 
-        if (books == null || members == null || books.size() == 0 || members.size() == 0 ) {
+
+        if (books.size() == 0 || members.size() == 0) {
             // show an alert if either the book or member does not exist
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -183,33 +175,81 @@ Ovako je to moguce
             alert.setContentText("Error: You didn't enter correct information!");
             alert.showAndWait();
         }
-        else {
-            bookManager.decreaseBookCount(books.get(0));
-            Stage stage = new Stage();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registerBook.fxml"));
-            registerBookController controller = new registerBookController(enterBookNameid.getText(), enterMemberEmailId.getText());
-            loader.setController(controller);
-            stage.setTitle("Register Book");
-            stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
-            stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-            stage.setResizable(false);
-            stage.show();
+        else if (books.size()!=0 && members.size()!=0) {
+            System.out.println("prvi if");
+            List<ShoppingCart> shoppingCartList = shoppingCartManager.getAll();
+            boolean ima = false;
+            List<Member> membersList = new ArrayList<>();
+            membersList = memberManager.getByEmail(enterMemberEmailId.getText());
+            Member member = new Member();
+            if (membersList.size() == 1)
+                member = membersList.get(0);
+
+            List<Book> bookList = new ArrayList<>();
+            bookList=bookManager.getByName(enterBookNameid.getText());
+            Book book = new Book();
+            if(bookList.size()==1)
+                book = bookList.get(0);
+
+            for(ShoppingCart sh :  shoppingCartList) {
+                 int memberCardId = sh.getMember_card_id();
+                 MemberCard memberCard = new MemberCard();
+                 memberCard = DaoFactory.members_cardsDao().getById(memberCardId);
+
+                if (memberCard.getMember_id() == member.getId()) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText("Already registered book with this email");
+                    alert.setResizable(false);
+                    alert.setContentText("Error!");
+                    alert.showAndWait();
+                    ima = true;
+                    break;
+                }
+            }
+                if(ima==false){
+                    ShoppingCart shoppingCart = new ShoppingCart();
+                    shoppingCart.setBook_id(book.getId());
+                    MemberCardManager memberCardManager = new MemberCardManager();
+                    List<MemberCard> memberCardList = memberCardManager.getAll();
+                    System.out.println("MEMBERCARDLIST: " + memberCardList.size());
+                    MemberCard memberCard = new MemberCard();
+                    for(MemberCard mc : memberCardList){
+                        if(mc.getMember_id()==member.getId()){
+                            memberCard=mc;
+                            break;
+                        }
+                    }
+                    System.out.println("MEMBER JE: " + member);
+                    System.out.println("CARD: " + memberCard);
+                    shoppingCart.setMember_card_id(memberCard.getId());
+                    shoppingCart.setBuy_date(LocalDate.now());
+                    shoppingCartManager.add(shoppingCart);
+                    System.out.println("drugi if");
+                        bookManager.decreaseBookCount(books.get(0));
+                        Stage stage = new Stage();
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registerBook.fxml"));
+                        registerBookController controller = new registerBookController(enterBookNameid.getText(), enterMemberEmailId.getText());
+                        loader.setController(controller);
+                        stage.setTitle("Register Book");
+                        stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
+                        stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+                        stage.setResizable(false);
+                        stage.show();
+
+                }
+
+
         }
     }catch(Exception e){
+
+            System.out.println(e.getMessage());
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Error");
             alert.setContentText("Error");
             alert.showAndWait();
         }
-    }
-
-    public SampleController(){
-    }
-
-    @FXML
-    public void initialize(){
-
     }
 
 }

@@ -33,8 +33,7 @@ public class MemberCardDaoImpl extends AbstractDao<MemberCard> implements Member
             MemberCard member_cards = new MemberCard();
             member_cards.setId(rs.getInt("id"));
             member_cards.setMember_id(rs.getInt("member_id"));
-            member_cards.setActivation_date(rs.getDate("activation_date"));
-            member_cards.setExpiration_date(rs.getDate("expiration_date"));
+            member_cards.setActivation_date(rs.getDate("activation_date").toLocalDate());
             return member_cards;
         } catch (SQLException e) {
             throw new LibraryException(e.getMessage(), e);
@@ -47,7 +46,6 @@ public class MemberCardDaoImpl extends AbstractDao<MemberCard> implements Member
         row.put("id", object.getId());
         row.put("member_id", object.getMember_id());
         row.put("activation_date", object.getActivation_date());
-        row.put("expiration_date", object.getExpiration_date());
         return row;
     }
 

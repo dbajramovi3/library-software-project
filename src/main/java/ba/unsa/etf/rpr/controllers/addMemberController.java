@@ -1,7 +1,9 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.business.MemberCardManager;
 import ba.unsa.etf.rpr.business.MemberManager;
 import ba.unsa.etf.rpr.domain.Member;
+import ba.unsa.etf.rpr.domain.MemberCard;
 import ba.unsa.etf.rpr.exception.LibraryException;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
@@ -9,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 public class addMemberController {
@@ -18,6 +22,7 @@ public class addMemberController {
     public TextField lastNameId;
     public TextField emailId;
     private MemberManager memberManager = new MemberManager();
+    private MemberCardManager memberCardManager = new MemberCardManager();
 
     public void saveAction(ActionEvent actionEvent) throws LibraryException {
 
@@ -58,6 +63,11 @@ public class addMemberController {
      member.setEmail(emailId.getText());
      try{
          memberManager.add(member);
+         MemberCard memberCard = new MemberCard();
+         memberCard.setActivation_date(LocalDate.now());
+         LocalDate date = LocalDate.now();
+         memberCard.setMember_id(member.getId());
+         memberCardManager.add(memberCard);
      } catch (LibraryException e) {
          System.out.println("Exception in saveAction method in addMemberController");
          throw new RuntimeException(e);

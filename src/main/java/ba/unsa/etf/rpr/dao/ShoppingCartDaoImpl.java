@@ -38,7 +38,7 @@ public class ShoppingCartDaoImpl extends AbstractDao<ShoppingCart> implements Sh
             shopping_cart.setId(rs.getInt("id"));
             shopping_cart.setMember_card_id(rs.getInt("member_card_id"));
             shopping_cart.setBook_id(rs.getInt("book_id"));
-            shopping_cart.setBuy_date(rs.getDate("buy_date"));
+            shopping_cart.setBuy_date(rs.getDate("buy_date").toLocalDate());
             return shopping_cart;
         } catch (SQLException e) {
             throw new LibraryException(e.getMessage(), e);
