@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="484.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.SampleController">
+<BorderPane prefHeight="459.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.SampleController">
    <right>
       <VBox prefHeight="339.0" prefWidth="150.0" BorderPane.alignment="CENTER">
          <children>
@@ -54,14 +54,6 @@
                </padding>
             </Button>
             <Button fx:id="allMembersid" mnemonicParsing="false" onAction="#allMembersAction" prefHeight="44.0" prefWidth="141.0" text="ALL Members">
-               <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </VBox.margin>
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-            </Button>
-            <Button fx:id="OkId" mnemonicParsing="false" onAction="#okAction" prefHeight="44.0" prefWidth="141.0" text="Oke">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
