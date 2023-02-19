@@ -13,7 +13,6 @@ import ba.unsa.etf.rpr.domain.MemberCard;
 import ba.unsa.etf.rpr.domain.ShoppingCart;
 import ba.unsa.etf.rpr.exception.LibraryException;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -36,6 +35,7 @@ public class SampleController {
     public Button allBooksid;
     public Button searchMemberid;
     public Button searchBookButtonid;
+    public Button shoppingCartInfoId;
 
     private BookManager bookManager = new BookManager();
 
@@ -250,4 +250,15 @@ Ovako je to moguce
         }
     }
 
+    public void shoppingCartInfoAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/shoppingCart.fxml"));
+        shoppingCartController controller = new shoppingCartController();
+        loader.setController(controller);
+        stage.setTitle("Shopping Cart");
+        stage.getIcons().add(new Image("https://icons-for-free.com/iconfiles/png/512/bookshelf+library+icon-1320087270870761354.png"));
+        stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+        stage.setResizable(false);
+        stage.show();
+    }
 }
