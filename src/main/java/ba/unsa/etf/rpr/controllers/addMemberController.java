@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.util.List;
+
 public class addMemberController {
     public Button saveButtonId;
     public Button cancelButtonId;
@@ -17,7 +19,7 @@ public class addMemberController {
     public TextField emailId;
     private MemberManager memberManager = new MemberManager();
 
-    public void saveAction(ActionEvent actionEvent) {
+    public void saveAction(ActionEvent actionEvent) throws LibraryException {
 
         String name = nameId.getText();
         String lastName = lastNameId.getText();
@@ -32,7 +34,6 @@ public class addMemberController {
             alert.showAndWait();
             return;
         }
-
         if (!isString(name) || !isString(lastName)) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -41,7 +42,15 @@ public class addMemberController {
             alert.showAndWait();
             return;
         }
-
+        List<Member> existingMembers = memberManager.getByEmail(email);
+        if (!existingMembers.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Email already exists");
+            alert.setContentText("This email address is already associated with a member. Please enter a different email address.");
+            alert.showAndWait();
+            return;
+        }
 
         Member member = new Member();
      member.setName(nameId.getText());
