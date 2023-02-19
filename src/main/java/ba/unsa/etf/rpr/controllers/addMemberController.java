@@ -33,7 +33,17 @@ public class addMemberController {
             return;
         }
 
-     Member member = new Member();
+        if (!isString(name) || !isString(lastName)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Wrong Information");
+            alert.setContentText("Please enter valid member name and member last name (strings only).");
+            alert.showAndWait();
+            return;
+        }
+
+
+        Member member = new Member();
      member.setName(nameId.getText());
      member.setLast_name(lastNameId.getText());
      member.setEmail(emailId.getText());
@@ -46,6 +56,19 @@ public class addMemberController {
         Stage stage = (Stage) emailId.getScene().getWindow();
         stage.close();
     }
+
+    private boolean isString(String str) {
+        if (str == null || str.trim().isEmpty()) {
+            return false;
+        }
+        String trimmedStr = str.trim().replaceAll("\\s+", "");
+        return trimmedStr.matches("[a-zA-Z]+");
+    }
+
+    private boolean isInteger(String str) {
+        return str.matches("\\d+");
+    }
+
 
     public void cancelAction(ActionEvent actionEvent) {
         Stage stage = (Stage) emailId.getScene().getWindow();

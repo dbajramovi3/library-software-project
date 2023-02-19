@@ -35,8 +35,8 @@ public class addBookController {
         if (bookTitle.isEmpty() || author.isEmpty() || currentBookHold.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Missing Information");
-            alert.setContentText("Please enter book title, author, and current book hold.");
+            alert.setHeaderText("One or more fields are empty");
+            alert.setContentText("Please enter values for all fields.");
             alert.showAndWait();
             return;
         }
