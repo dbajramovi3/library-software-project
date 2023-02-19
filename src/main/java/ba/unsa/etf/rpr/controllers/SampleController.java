@@ -176,7 +176,6 @@ Ovako je to moguce
             alert.showAndWait();
         }
         else if (books.size()!=0 && members.size()!=0) {
-            System.out.println("prvi if");
             List<ShoppingCart> shoppingCartList = shoppingCartManager.getAll();
             boolean ima = false;
             List<Member> membersList = new ArrayList<>();
@@ -225,7 +224,6 @@ Ovako je to moguce
                     shoppingCart.setMember_card_id(memberCard.getId());
                     shoppingCart.setBuy_date(LocalDate.now());
                     shoppingCartManager.add(shoppingCart);
-                    System.out.println("drugi if");
                         bookManager.decreaseBookCount(books.get(0));
                         Stage stage = new Stage();
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registerBook.fxml"));
