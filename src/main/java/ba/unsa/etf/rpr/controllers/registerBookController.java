@@ -25,10 +25,19 @@ public class registerBookController {
         this.memberid = memberid;
     }
 
+    /**
+     * closes the program
+     * @param actionEvent
+     */
     public void closeAction(ActionEvent actionEvent) {
         Stage stage = (Stage) bookId.getScene().getWindow();
         stage.close();
     }
+
+    /**
+     * simple initialize method
+     * @author dbajramovi3
+     */
     @FXML
     public void initialize(){
         bookId.setText(knjiga);

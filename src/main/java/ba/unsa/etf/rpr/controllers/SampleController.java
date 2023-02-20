@@ -54,7 +54,12 @@ public class SampleController {
          String ime i prezime
      */
 
-
+    /**
+     * Opens a new stage which shows different abilities
+     * @param actionEvent action
+     * @throws IOException izuzetak
+     * @author dbajramovi3
+     */
     public void addBookActon(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/addBook.fxml"));
@@ -83,6 +88,12 @@ Ove akcija ne mozemo pisati kao AppFX iz razloga sto moramo izbrisati text iz Sa
 Da smo to uraditi prozor se ne bi otvorio i prikazivalo bi error
 Ovako je to moguce
  */
+    /**
+     * Opens a new stage which shows different abilities
+     * @param actionEvent action
+     * @throws IOException izuzetak
+     * @author dbajramovi3
+     */
     public void addMemberAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/addMember.fxml"));
@@ -95,7 +106,12 @@ Ovako je to moguce
         stage.setResizable(false);
         stage.show();
     }
-
+    /**
+     * Opens a new stage which shows different abilities
+     * @param actionEvent action
+     * @throws IOException izuzetak
+     * @author dbajramovi3
+     */
     public void searchBookAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/searchBook.fxml"));
@@ -108,7 +124,12 @@ Ovako je to moguce
         stage.setResizable(false);
         stage.show();
     }
-
+    /**
+     * Opens a new stage which shows different abilities
+     * @param actionEvent action
+     * @throws IOException izuzetak
+     * @author dbajramovi3
+     */
     public void searchMemberAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/searchMember.fxml"));
@@ -120,7 +141,12 @@ Ovako je to moguce
         stage.setResizable(false);
         stage.show();
     }
-
+    /**
+     * Opens a new stage which shows different abilities
+     * @param actionEvent action
+     * @throws IOException izuzetak
+     * @author dbajramovi3
+     */
     public void allBooksAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/allBooks.fxml"));
@@ -132,7 +158,12 @@ Ovako je to moguce
         stage.setResizable(false);
         stage.show();
     }
-
+    /**
+     * Opens a new stage which shows different abilities
+     * @param actionEvent action
+     * @throws IOException izuzetak
+     * @author dbajramovi3
+     */
     public void allMembersAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/allMembers.fxml"));
@@ -150,11 +181,10 @@ Ovako je to moguce
      * firstly we check if user has entered information we don't want and show alert
      *  this code appears to be checking whether a given Member object already has a MemberCard object associated with a ShoppingCart
      *  object, and if not, adding a new ShoppingCart object to the database and opening a new window for registering a new book.
-     *
      * @author dbajramovi3
-     * @param actionEvent
-     * @throws IOException
-     * @throws LibraryException
+     * @param actionEvent akcija
+     * @throws IOException izuzetak
+     * @throws LibraryException izuzetak
      */
 
     public void registerBookAction(ActionEvent actionEvent) throws IOException, LibraryException {
@@ -173,7 +203,6 @@ Ovako je to moguce
 
         List<Book> books =  bookManager.getByName(bookName);
         List<Member> members =  memberManager.getByEmail(memberEmail);
-
 
         if (books.size() == 0 || members.size() == 0) {
             // show an alert if either the book or member does not exist
@@ -235,8 +264,6 @@ Ovako je to moguce
                     shoppingCartManager.add(shoppingCart);
                         bookManager.decreaseBookCount(books.get(0));
 
-
-
                         Stage stage = new Stage();
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registerBook.fxml"));
                         registerBookController controller = new registerBookController(enterBookNameid.getText(), enterMemberEmailId.getText());
@@ -246,10 +273,7 @@ Ovako je to moguce
                         stage.setScene(new Scene(loader.<Parent>load(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
                         stage.setResizable(false);
                         stage.show();
-
                 }
-
-
         }
     }catch(Exception e){
 
@@ -262,6 +286,12 @@ Ovako je to moguce
         }
     }
 
+    /**
+     * Opens a new stage which shows different abilities
+     * @param actionEvent action
+     * @throws IOException izuzetak
+     * @author dbajramovi3
+     */
     public void shoppingCartInfoAction(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/shoppingCart.fxml"));

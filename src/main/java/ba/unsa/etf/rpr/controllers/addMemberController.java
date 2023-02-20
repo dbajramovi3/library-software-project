@@ -27,6 +27,10 @@ public class addMemberController {
     /**
      * Just like in addBookController simple checkings if user enters information we do not want
      * shows an alert
+     * Checking if there already is an existing member, and we check via email
+     * If there are no existing members with the same email address, the code creates a new Member
+     * object and sets its name, last name, and email fields based on the values entered by the user in the GUI.Finally, the code creates a new MemberCard object, sets its activation date
+     * and member ID fields, and calls the add method of the memberCardManager object to add the new member card to the system.
      * @author dbajramovi3
      */
 
@@ -53,13 +57,7 @@ public class addMemberController {
             alert.showAndWait();
             return;
         }
-        /**
-         * Checking if there already is an existing member, and we check via email
-         * If there are no existing members with the same email address, the code creates a new Member
-         * object and sets its name, last name, and email fields based on the values entered by the user in the GUI.Finally, the code creates a new MemberCard object, sets its activation date
-         * and member ID fields, and calls the add method of the memberCardManager object to add the new member card to the system.
-         * @author dbajramovi3
-         */
+
         List<Member> existingMembers = memberManager.getByEmail(email);
         if (!existingMembers.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -91,8 +89,8 @@ public class addMemberController {
 
     /**
      * Same as in addBookController
-     * @param str
-     * @return
+     * @param str string
+     * @return boolea
      */
     private boolean isString(String str) {
         if (str == null || str.trim().isEmpty()) {
@@ -102,11 +100,19 @@ public class addMemberController {
         return trimmedStr.matches("[a-zA-Z]+");
     }
 
+    /**
+     * Checks if its ineger
+     * @param str s
+     * @return boolean
+     */
     private boolean isInteger(String str) {
         return str.matches("\\d+");
     }
 
-
+    /**
+     * closes the stage
+     * @param actionEvent
+     */
     public void cancelAction(ActionEvent actionEvent) {
         Stage stage = (Stage) emailId.getScene().getWindow();
         stage.close();

@@ -29,6 +29,10 @@ public class allMembersController {
         }
     }
 
+    /**
+     * closes the stage
+     * @param actionEvent
+     */
     public void closeAction(ActionEvent actionEvent) {
         Stage stage = (Stage) closeId.getScene().getWindow();
         stage.close();

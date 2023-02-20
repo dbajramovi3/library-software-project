@@ -86,7 +86,7 @@ public class addBookController {
         }
 
     /**
-     * isString and isInteger method used for checking above if the code is string or integer
+     * isString  method used for checking above if the code is string
      * @return boolean
      * @author dbajramovi3
      */
@@ -98,14 +98,25 @@ public class addBookController {
         return trimmedStr.matches("[a-zA-Z]+");
     }
 
+    /**
+     * isInteger  method used for checking above if the code is intager
+     * @return boolean
+     * @author dbajramovi3
+     */
     private boolean isInteger(String str) {
         return str.matches("\\d+");
     }
 
-
+    /**
+     * empty constructor
+     */
     public addBookController() {
     }
 
+    /**
+     * closes the stage
+     * @param actionEvent
+     */
     public void cancelAction(ActionEvent actionEvent) {
         Stage stage = (Stage) currentBookHoldId.getScene().getWindow();
         stage.close();
