@@ -234,6 +234,9 @@ Ovako je to moguce
                     shoppingCart.setBuy_date(LocalDate.now());
                     shoppingCartManager.add(shoppingCart);
                         bookManager.decreaseBookCount(books.get(0));
+
+
+
                         Stage stage = new Stage();
                         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/registerBook.fxml"));
                         registerBookController controller = new registerBookController(enterBookNameid.getText(), enterMemberEmailId.getText());

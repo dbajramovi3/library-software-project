@@ -19,6 +19,11 @@ public class searchMemberController {
     public Button searchBttn;
     public TextField enterMNameId;
     private MemberManager memberManager = new MemberManager();
+
+    /**
+     * Action for closing stage
+     * @param actionEvent
+     */
     public void closeAction(ActionEvent actionEvent) {
         Stage stage = (Stage) labelId.getScene().getWindow();
         stage.close();
