@@ -3,14 +3,15 @@ package ba.unsa.etf.rpr.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Member class which implements Serializable interface, empty constructor, getters and setters
+ * Meaning it follows javabeans specification
+ * Member class also contains a constuctor with 4 atributes, toString, equals and hashcode method
+ * @author dbajramovi3
+ */
 public class Member implements Idable, Serializable {
 
-    /**
-     * Member class which implements Serializable interface, empty constructor, getters and setters
-     * Meaning it follows javabeans specification
-     * Member class also contains a constuctor with 4 atributes, toString, equals and hashcode method
-     * @author dbajramovi3
-     */
+
     private int id;
     private String name;
     private String last_name;

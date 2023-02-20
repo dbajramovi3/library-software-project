@@ -40,12 +40,10 @@ public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
     }
 
     /**
-     * row2object method which is declared in AbsractDao
+     * row to object method which is declared in AbstractDao
      * This is a Java method that takes a ResultSet object as input and converts
      * the data in the current row of the result set to a Member object.
      * @param rs - result set from database
-     * @return
-     * @throws LibraryException
      */
     @Override
     public Member row2object(ResultSet rs) throws LibraryException {
@@ -61,10 +59,9 @@ public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
         }
     }
     /**
-     * object2row is a Java method that takes a Member object as input and converts
+     * object to row is a Java method that takes a Member object as input and converts
      * it to a Map object that represents a row of data that can be inserted into a database.
      * @param object - a bean object for specific table
-     * @return
      */
     @Override
     public Map<String, Object> object2row(Member object) {
@@ -80,9 +77,6 @@ public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
      * getByName and getByEmail take name and email from members table,
      * they are mentioned in MemberDao interface
      * @author dbajramovi3
-     * @param name
-     * @return
-     * @throws LibraryException
      */
     @Override
     public List<Member> getByName(String name) throws LibraryException {

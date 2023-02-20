@@ -8,8 +8,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * ShoppingCartdaoImpl Class which contains implements ShoppingCartDao interface meaning it also contains DAO interface
- * Also extends AbstractDao abstract class meaning it has abstract methods from it
+ * ShoppingCartDaoImpl Class which contains implements ShoppingCartDao interface meaning it also contains DAO interface
+ * Also extends AbstractDao abstract class meaning it has abstract methods from it.
  * We can see singleton pattern which means it has only one instance, and private constructor, and getInstance method,
  * as well as removeInstance method
  *
@@ -37,12 +37,10 @@ public class ShoppingCartDaoImpl extends AbstractDao<ShoppingCart> implements Sh
     }
 
     /**
-     * row2object method which is declared in AbsractDao
+     * row to object method which is declared in AbstractDao
      * This is a Java method that takes a ResultSet object as input and converts
      * the data in the current row of the result set to a ShoppingCart object.
      * @param rs - result set from database
-     * @return
-     * @throws LibraryException
      */
     @Override
     public ShoppingCart row2object(ResultSet rs) throws LibraryException {
@@ -59,10 +57,9 @@ public class ShoppingCartDaoImpl extends AbstractDao<ShoppingCart> implements Sh
     }
 
     /**
-     * object2row is a Java method that takes a ShoppingCart object as input and converts
+     * object to row is a Java method that takes a ShoppingCart object as input and converts
      * it to a Map object that represents a row of data that can be inserted into a database.
      * @param object - a bean object for specific table
-     * @return
      */
     @Override
     public Map<String, Object> object2row(ShoppingCart object) {

@@ -28,11 +28,10 @@ public class BookDaoImpl extends AbstractDao<Book> implements BookDao {
     }
 
     /**
-     * row2object method which is declared in AbsractDao
+     * row to object method which is declared in AbstractDao
      * This is a Java method that takes a ResultSet object as input and converts
      * the data in the current row of the result set to a Book object.
      * @param rs - result set from database
-     * @return
      * @throws LibraryException
      */
     @Override
@@ -50,7 +49,7 @@ public class BookDaoImpl extends AbstractDao<Book> implements BookDao {
     }
 
     /**
-     * object2row is a Java method that takes a Book object as input and converts
+     * object to row is a Java method that takes a Book object as input and converts
      * it to a Map object that represents a row of data that can be inserted into a database.
      * @param object - a bean object for specific table
      * @return
@@ -68,8 +67,6 @@ public class BookDaoImpl extends AbstractDao<Book> implements BookDao {
     /**
      * getByName method, takes title from books table, also mentioned n BookDao interface
      * @author dbajramovi3
-     * @param name
-     * @return
      * @throws LibraryException
      */
     @Override

@@ -7,13 +7,10 @@ import java.util.*;
 
 /**
  * Abstract class that implements core DAO CRUD methods for every entity
- *
+ * In here, we are using singleton pattern
+ * @author dbajramovi3
  */
 public abstract class AbstractDao<T extends Idable> implements Dao<T> {
-    /**
-     * In here, we are using singleton pattern
-     * @author dbajramovi3
-     */
     private static Connection connection = null;
     private String tableName;
 

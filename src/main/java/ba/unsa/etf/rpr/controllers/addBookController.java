@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
+ * addBookController
  * @author Dino Bajramovic
  */
 
@@ -33,7 +34,7 @@ public class addBookController {
             String currentBookHold = currentBookHoldId.getText().trim();
 
         /**
-         * Wanted to cover cases of incorect login so a lot of checking in addBookController
+         * Wanted to cover cases of incorrect login so a lot of checking in addBookController
          * Explained in code
          * @author dbajramovi3
          */

@@ -52,7 +52,7 @@ public class shoppingCartController {
 
     /**
      * We collect information form database for each column
-     * @dbajramovi3
+     * @author dbajramovi3
      * @throws LibraryException
      */
     public void initialize() throws LibraryException {

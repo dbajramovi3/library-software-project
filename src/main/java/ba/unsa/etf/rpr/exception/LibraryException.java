@@ -1,8 +1,5 @@
 package ba.unsa.etf.rpr.exception;
 
-/**
- * @author dbajramovi3
- */
 public class LibraryException extends Exception{
 
 

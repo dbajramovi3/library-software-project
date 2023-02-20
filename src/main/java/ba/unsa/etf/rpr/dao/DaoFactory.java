@@ -4,7 +4,7 @@ package ba.unsa.etf.rpr.dao;
  // Factory method for singleton implementation of DAOs
 
 /**
- * Is used so we don't have to make instances of BookDaoImpl or MemberDaoImpl..
+ * Is used, so we don't have to make instances of BookDaoImpl or MemberDaoImpl..
  * We can just call DaoFactory
  */
 public class DaoFactory {
