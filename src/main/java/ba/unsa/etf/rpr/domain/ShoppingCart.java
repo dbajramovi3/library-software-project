@@ -5,6 +5,12 @@ import java.util.Date;
 import java.util.Objects;
 
 public class ShoppingCart implements Idable, Serializable {
+    /**
+     * ShoppingCart class which implements Serializable interface, empty constructor, getters and setters
+     * Meaning it follows javabeans specification
+     * ShoppingCart class also contains a constuctor with 4 atributes, toString, equals and hashcode method
+     * @author dbajramovi3
+     */
     private int id;
     private int member_card_id;
     private int book_id;

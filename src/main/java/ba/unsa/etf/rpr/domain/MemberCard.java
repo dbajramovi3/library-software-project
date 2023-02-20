@@ -5,6 +5,13 @@ import java.util.Date;
 import java.util.Objects;
 
 public class MemberCard implements Idable, Serializable {
+
+    /**
+     * MemberCard class which implements Serializable interface, empty constructor, getters and setters
+     * Meaning it follows javabeans specification
+     * MemberCard class also contains a constuctor with 3 atributes, toString, equals and hashcode method
+     * @author dbajramovi3
+     */
     private int id;
     private int member_id;
     private LocalDate activation_date;

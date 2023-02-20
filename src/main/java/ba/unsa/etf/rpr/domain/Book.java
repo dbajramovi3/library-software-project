@@ -4,6 +4,12 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class Book implements Idable, Serializable {
+    /**
+     * Book class which implements Serializable interface, empty constructor, getters and setters
+     * Meaning it follows javabeans specification
+     * Book class also contains a constuctor with 4 atributes, toString, equals and hashcode method
+     * @author dbajramovi3
+     */
     private int id;
     private String title;
     private String author;
