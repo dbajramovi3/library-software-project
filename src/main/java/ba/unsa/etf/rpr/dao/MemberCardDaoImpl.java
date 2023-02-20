@@ -27,6 +27,14 @@ public class MemberCardDaoImpl extends AbstractDao<MemberCard> implements Member
         super(tableName);
     }
 
+    /**
+     * row2object method which is declared in AbsractDao
+     * This is a Java method that takes a ResultSet object as input and converts
+     * the data in the current row of the result set to a MemberCard object.
+     * @param rs - result set from database
+     * @return
+     * @throws LibraryException
+     */
     @Override
     public MemberCard row2object(ResultSet rs) throws LibraryException {
         try {
@@ -39,7 +47,12 @@ public class MemberCardDaoImpl extends AbstractDao<MemberCard> implements Member
             throw new LibraryException(e.getMessage(), e);
         }
     }
-
+    /**
+     * object2row is a Java method that takes a MemberCard object as input and converts
+     * it to a Map object that represents a row of data that can be inserted into a database.
+     * @param object - a bean object for specific table
+     * @return
+     */
     @Override
     public Map<String, Object> object2row(MemberCard object) {
         Map<String, Object> row = new TreeMap<>();

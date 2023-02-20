@@ -1,6 +1,5 @@
 package ba.unsa.etf.rpr.dao;
 
-import ba.unsa.etf.rpr.domain.Book;
 import ba.unsa.etf.rpr.domain.Idable;
 import ba.unsa.etf.rpr.exception.LibraryException;
 import java.sql.*;
@@ -11,6 +10,10 @@ import java.util.*;
  *
  */
 public abstract class AbstractDao<T extends Idable> implements Dao<T> {
+    /**
+     * In here, we are using singleton pattern
+     * @author dbajramovi3
+     */
     private static Connection connection = null;
     private String tableName;
 
@@ -19,6 +22,9 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         createConnection();
     }
 
+    /**
+     * Base connection
+     */
     private static void createConnection(){
         if(AbstractDao.connection==null) {
             try {
