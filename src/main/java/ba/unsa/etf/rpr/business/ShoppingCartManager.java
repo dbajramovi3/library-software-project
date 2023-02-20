@@ -5,6 +5,10 @@ import ba.unsa.etf.rpr.exception.LibraryException;
 
 import java.util.List;
 
+/**
+ * ShoppingCartManager with add, getAll, update, delete methods
+ * @author dbajramovi3
+ */
 public class ShoppingCartManager {
 
     public ShoppingCart add(ShoppingCart shoppingCart) throws LibraryException {

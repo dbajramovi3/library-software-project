@@ -9,6 +9,10 @@ import ba.unsa.etf.rpr.exception.LibraryException;
 
 import java.util.List;
 
+/**
+ * MemberManager with add, getAll, getByName, getByEmail, update and delete methods
+ * @author dbajramovi3
+ */
 public class MemberManager {
     public Member add(Member member) throws LibraryException {
         if (member.getId() != 0){

@@ -6,6 +6,10 @@ import ba.unsa.etf.rpr.exception.LibraryException;
 
 import java.util.List;
 
+/**
+ * MemberCardManager with add, getAll, update, delete methods
+ * @author dbajramovi3
+ */
 public class MemberCardManager {
     public MemberCard add(MemberCard memberCard) throws LibraryException {
         if (memberCard.getId() != 0){

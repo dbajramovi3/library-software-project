@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.business;
 
-import ba.unsa.etf.rpr.dao.AbstractDao;
+
 import ba.unsa.etf.rpr.dao.BookDao;
 import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.domain.Book;
@@ -8,6 +8,10 @@ import ba.unsa.etf.rpr.exception.LibraryException;
 
 import java.util.List;
 
+/**
+ * BookManager with add, getAll, getByName, update, delete and other 2 methods explained
+ * @author dbajramovi3
+ */
 public class BookManager {
     public Book add(Book book) throws LibraryException {
         if (book.getId() != 0){
@@ -44,6 +48,13 @@ public class BookManager {
         }
     }
 
+    /**
+     * Method used to decrese book count by 1, is used in SampleController in registerAction
+     * @author dbajramovi3
+     * @param book
+     * @throws LibraryException
+     */
+
     public void decreaseBookCount(Book book) throws LibraryException {
         int bookCount = book.getCurrent_book_hold();
         if (bookCount <= 0) {
@@ -53,6 +64,14 @@ public class BookManager {
             update(book);
         }
     }
+
+    /**
+     * method used in addBookController used to chek if the book already exists so it can throw alert if it does
+     * @author dbajramovi3
+     * @param title
+     * @return
+     * @throws LibraryException
+     */
 
     public Book getBookByTitle(String title) throws LibraryException {
         try {
