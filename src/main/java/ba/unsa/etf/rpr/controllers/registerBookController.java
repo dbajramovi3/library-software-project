@@ -13,7 +13,7 @@ public class registerBookController {
     private String knjiga, memberid;
 
     /**
-     * When we want to pass information entered in the main window to another
+     * When we want to pass information from the main window to another window
      * we pass it through constructor
      * we did that in sample controller on registerAction
      * @author dbajramovi3
@@ -29,10 +29,6 @@ public class registerBookController {
         Stage stage = (Stage) bookId.getScene().getWindow();
         stage.close();
     }
-
-    /**
-     *
-     */
     @FXML
     public void initialize(){
         bookId.setText(knjiga);

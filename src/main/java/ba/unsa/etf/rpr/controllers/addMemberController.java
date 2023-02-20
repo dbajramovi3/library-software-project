@@ -24,17 +24,17 @@ public class addMemberController {
     private MemberManager memberManager = new MemberManager();
     private MemberCardManager memberCardManager = new MemberCardManager();
 
+    /**
+     * Just like in addBookController simple checkings if user enters information we do not want
+     * shows an alert
+     * @author dbajramovi3
+     */
+
     public void saveAction(ActionEvent actionEvent) throws LibraryException {
 
         String name = nameId.getText();
         String lastName = lastNameId.getText();
         String email = emailId.getText();
-
-        /**
-         * Just like in addBookController simple checkings if user enters information we do not want
-         * shows an alert
-         * @author dbajramovi3
-         */
 
         if (name.isEmpty() || lastName.isEmpty() || email.isEmpty()) {
             // Show an alert if any fields are empty
@@ -54,12 +54,11 @@ public class addMemberController {
             return;
         }
         /**
-         * @author dbajramovi3
-         * Checking if there already is a existing member, and we check via email
-         * More members can have the same name and last name but not the same email
+         * Checking if there already is an existing member, and we check via email
          * If there are no existing members with the same email address, the code creates a new Member
          * object and sets its name, last name, and email fields based on the values entered by the user in the GUI.Finally, the code creates a new MemberCard object, sets its activation date
          * and member ID fields, and calls the add method of the memberCardManager object to add the new member card to the system.
+         * @author dbajramovi3
          */
         List<Member> existingMembers = memberManager.getByEmail(email);
         if (!existingMembers.isEmpty()) {

@@ -79,9 +79,6 @@ public class SampleController {
             List<String> lista = controller.vratiPodatke();
             listView.getItems().addAll(FXCollections.observableList(lista));
         });
-    */
-
-/*
 Ove akcija ne mozemo pisati kao AppFX iz razloga sto moramo izbrisati text iz Sample controllera. tj. fx:controller="ba.unsa.etf.rpr.controllers..."
 Da smo to uraditi prozor se ne bi otvorio i prikazivalo bi error
 Ovako je to moguce

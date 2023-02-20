@@ -25,19 +25,18 @@ public class addBookController {
     public TextField currentBookHoldId;
     public TextField authorId;
     private BookManager bookManager = new BookManager();
+    /**
+     * Wanted to cover cases of incorrect login so a lot of checking in addBookController
 
-
+     * @author dbajramovi3
+     */
     public void saveAction(ActionEvent actionEvent) throws LibraryException {
 
             String bookTitle = bookTitleId.getText().trim();
             String author = authorId.getText().trim();
             String currentBookHold = currentBookHoldId.getText().trim();
 
-        /**
-         * Wanted to cover cases of incorrect login so a lot of checking in addBookController
-         * Explained in code
-         * @author dbajramovi3
-         */
+
 
         if (bookTitle.isEmpty() || author.isEmpty() || currentBookHold.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -63,11 +62,7 @@ public class addBookController {
             alert.showAndWait();
             return;
         }
-        /**
-         * we needed to create getBookByTitle for this check to see if there already is a book registered in database
-         * with the same name
-         * @author dbajramovi3
-         */
+        // We needed to create getBookByTitle for this check to see if there already is a book registered in database with the same name
         if (bookManager.getBookByTitle(bookTitle) != null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -93,8 +88,8 @@ public class addBookController {
 
     /**
      * isString and isInteger method used for checking above if the code is string or integer
-     * @param str
-     * @return
+     * @return boolean
+     * @author dbajramovi3
      */
     private boolean isString(String str) {
         if (str == null || str.trim().isEmpty()) {

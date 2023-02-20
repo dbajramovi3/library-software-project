@@ -15,12 +15,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
 import java.util.List;
-
+/**
+ * So in our shoppingCartController we have a tableView and we had to take id-s from the table columns
+ * @author dbajramovi3
+ */
 public class shoppingCartController {
-    /**
-     * So in our shoppingCartController we have a tableView and we had to take id-s from the table columns
-     * @author dbajramovi3
-     */
 
     public Button deleteBttnId;
     public TableView<ShoppingCart> tableView;
@@ -53,7 +52,6 @@ public class shoppingCartController {
     /**
      * We collect information form database for each column
      * @author dbajramovi3
-     * @throws LibraryException
      */
     public void initialize() throws LibraryException {
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
