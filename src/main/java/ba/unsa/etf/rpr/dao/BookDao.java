@@ -10,7 +10,12 @@ import java.util.List;
  */
 public interface BookDao extends Dao<Book>{
 
-
+    /**
+     * Takes book name out of database
+     * @param name
+     * @return
+     * @throws LibraryException
+     */
     public List<Book> getByName(String name) throws LibraryException;
 
 

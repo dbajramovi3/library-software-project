@@ -9,8 +9,19 @@ import java.util.List;
  * @author dbajramovi3
  */
 public interface MemberDao extends Dao<Member> {
-
+    /**
+     * Take member name out of database
+     * @param name
+     * @return
+     * @throws LibraryException
+     */
     public List<Member> getByName(String name) throws LibraryException;
 
+    /**
+     * Take member email out of database
+     * @param email
+     * @return
+     * @throws LibraryException
+     */
     public List<Member> getByEmail(String email) throws LibraryException;
 }

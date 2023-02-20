@@ -71,7 +71,6 @@ public class addBookController {
             alert.showAndWait();
             return;
         }
-
             Book book = new Book();
             book.setTitle(bookTitleId.getText());
             book.setAuthor(authorId.getText());

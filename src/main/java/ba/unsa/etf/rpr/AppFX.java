@@ -13,7 +13,11 @@ import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
 
 public class AppFX extends Application {
-
+    /**
+     * Method for loading first home screen
+     * @param primaryStage
+     * @throws IOException
+     */
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/sample.fxml"));

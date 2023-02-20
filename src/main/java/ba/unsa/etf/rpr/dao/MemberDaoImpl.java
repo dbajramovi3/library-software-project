@@ -73,16 +73,25 @@ public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
         return row;
     }
 
+
     /**
-     * getByName and getByEmail take name and email from members table,
-     * they are mentioned in MemberDao interface
-     * @author dbajramovi3
+     * Take member name out of database impl
+     * @param name
+     * @return
+     * @throws LibraryException
      */
     @Override
     public List<Member> getByName(String name) throws LibraryException {
         return executeQuery("SELECT * FROM members WHERE name LIKE concat('%', ?, '%')", new Object[]{name});
     }
 
+
+    /**
+     * Take member email out of database impl
+     * @param email
+     * @return
+     * @throws LibraryException
+     */
     @Override
     public List<Member> getByEmail(String email) throws LibraryException {
         return executeQuery("SELECT * FROM members WHERE email LIKE concat('%', ?, '%')", new Object[]{email});
