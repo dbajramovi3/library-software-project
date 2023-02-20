@@ -20,16 +20,26 @@ import java.util.TreeMap;
 
 public class MemberDaoImpl extends AbstractDao<Member> implements MemberDao {
     private static MemberDaoImpl instance = null;
+
+    /**
+     * Constructor
+     */
     private MemberDaoImpl() {
         super("members");
     }
-
+    /**
+     * Returns instance, and if it does not exist then it makes it
+     * @return instance
+     * @author dbajramovi3
+     */
     public static MemberDaoImpl getInstance(){
         if(instance==null)
             instance = new MemberDaoImpl();
         return instance;
     }
-
+    /**
+     * Removes instance
+     */
     public static void removeInstance(){
         if(instance!=null)
             instance=null;

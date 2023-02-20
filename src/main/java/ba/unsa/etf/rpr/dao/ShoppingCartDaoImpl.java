@@ -17,21 +17,37 @@ import java.util.TreeMap;
  */
 public class ShoppingCartDaoImpl extends AbstractDao<ShoppingCart> implements ShoppingCartDao {
     private static ShoppingCartDaoImpl instance = null;
+
+    /**
+     * Constructor
+     */
     private ShoppingCartDaoImpl() {
         super("shopping_cart");
     }
-
+    /**
+     * Returns instance, and if it does not exist then it makes it
+     * @return instance
+     * @author dbajramovi3
+     */
     public static ShoppingCartDaoImpl getInstance(){
         if(instance==null)
             instance = new ShoppingCartDaoImpl();
         return instance;
     }
 
+    /**
+     * Removes instance
+     */
     public static void removeInstance(){
         if(instance!=null)
             instance=null;
     }
 
+    /**
+     * shoppingCartDaoImpl constructor
+     * @param tableName
+     * @author dbajramovi3
+     */
     public ShoppingCartDaoImpl(String tableName) {
         super(tableName);
     }

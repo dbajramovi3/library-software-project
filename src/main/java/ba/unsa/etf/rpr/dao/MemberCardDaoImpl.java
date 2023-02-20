@@ -9,15 +9,25 @@ import java.util.TreeMap;
 
 public class MemberCardDaoImpl extends AbstractDao<MemberCard> implements MemberCardDao {
     private static MemberCardDaoImpl instance = null;
+
+    /**
+     * Constructor
+     */
     private MemberCardDaoImpl() {super("member_cards");
     }
-
+    /**
+     * Returns instance, and if it does not exist then it makes it
+     * @return instance
+     * @author dbajramovi3
+     */
     public static MemberCardDaoImpl getInstance(){
         if(instance==null)
             instance = new MemberCardDaoImpl();
         return instance;
     }
-
+    /**
+     * Removes instance
+     */
     public static void removeInstance(){
         if(instance!=null)
             instance=null;

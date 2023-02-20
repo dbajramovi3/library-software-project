@@ -10,15 +10,27 @@ import java.util.TreeMap;
 
 public class BookDaoImpl extends AbstractDao<Book> implements BookDao {
     private static BookDaoImpl instance = null;
+
+    /**
+     * Constructor
+     */
     private BookDaoImpl() {
         super("books");
     }
+
+    /**
+     * Returns instance, and if it does not exist then it makes it
+     * @return instance
+     * @author dbajramovi3
+     */
     public static BookDaoImpl getInstance(){
         if(instance==null)
             instance = new BookDaoImpl();
         return instance;
     }
-
+    /**
+     * Removes instance
+     */
     public static void removeInstance(){
         if(instance!=null)
             instance=null;
