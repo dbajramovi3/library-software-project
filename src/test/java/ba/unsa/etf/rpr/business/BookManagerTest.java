@@ -19,6 +19,11 @@ class BookManagerTest {
     private BookDaoImpl bookDaoImplMock = Mockito.mock(BookDaoImpl.class);
 
 
+    /**
+     * Mocking test for add method
+     * @throws LibraryException
+     * @author dbajramovi3
+     */
         @Test
         void add() throws LibraryException{
             Book book = new Book();

@@ -57,7 +57,9 @@ public class BookManager {
 
     public void decreaseBookCount(Book book) throws LibraryException {
         int bookCount = book.getCurrent_book_hold();
+        System.out.println(bookCount);
         if (bookCount <= 0) {
+            System.out.println("izbrisi knjigu ");
             delete(book.getId());
         } else {
             book.setCurrent_book_hold(bookCount - 1);
