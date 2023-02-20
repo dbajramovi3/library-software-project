@@ -8,7 +8,17 @@ import ba.unsa.etf.rpr.exception.LibraryException;
  */
 public interface Idable{
 
+    /**
+     * setId Method
+     * @param id
+     * @throws LibraryException
+     */
     void setId(int id) throws LibraryException;
 
+    /**
+     * getId method
+     * @return
+     * @throws LibraryException
+     */
     int getId() throws LibraryException;
 }
