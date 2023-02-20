@@ -15,6 +15,10 @@ public class allMembersController {
     public ListView listView;
     private MemberManager memberManager = new MemberManager();
 
+    /**
+     * initialize method that loads member files as the window loads
+     * @author dbajramovi3
+     */
     @FXML
     public void initialize(){
         try {

@@ -17,6 +17,10 @@ public class allBooksController {
     public ListView listView;
     private BookManager bookManager = new BookManager();
 
+    /**
+     * initialize method that loads book files as the window loads
+     * @author dbajramovi3
+     */
     @FXML
     public void initialize(){
         try {

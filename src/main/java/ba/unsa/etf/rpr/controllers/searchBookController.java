@@ -25,6 +25,11 @@ public class searchBookController {
         stage.close();
     }
 
+    /**
+     * searchButton action used to check if the book title is in the databe
+     * @author dbajramovi3
+     * @param actionEvent
+     */
     public void searchBttnAction(ActionEvent actionEvent) {
         try {
             List<Book> bookList = bookManager.getByName(enterBookNameId.getText());

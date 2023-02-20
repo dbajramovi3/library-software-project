@@ -148,6 +148,18 @@ Ovako je to moguce
         stage.show();
     }
 
+    /**
+     * registerBookAction
+     * firstly we check if user has entered information we don't want and show alert
+     *  this code appears to be checking whether a given Member object already has a MemberCard object associated with a ShoppingCart
+     *  object, and if not, adding a new ShoppingCart object to the database and opening a new window for registering a new book.
+     *
+     * @author dbajramovi3
+     * @param actionEvent
+     * @throws IOException
+     * @throws LibraryException
+     */
+
     public void registerBookAction(ActionEvent actionEvent) throws IOException, LibraryException {
         try{
             String bookName = enterBookNameid.getText().trim();

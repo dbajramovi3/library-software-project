@@ -32,6 +32,12 @@ public class addBookController {
             String author = authorId.getText().trim();
             String currentBookHold = currentBookHoldId.getText().trim();
 
+        /**
+         * Wanted to cover cases of incorect login so a lot of checking in addBookController
+         * Explained in code
+         * @author dbajramovi3
+         */
+
         if (bookTitle.isEmpty() || author.isEmpty() || currentBookHold.isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -56,6 +62,11 @@ public class addBookController {
             alert.showAndWait();
             return;
         }
+        /**
+         * we needed to create getBookByTitle for this check to see if there already is a book registered in database
+         * with the same name
+         * @author dbajramovi3
+         */
         if (bookManager.getBookByTitle(bookTitle) != null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
@@ -79,7 +90,11 @@ public class addBookController {
             stage.close();
         }
 
-
+    /**
+     * isString and isInteger method used for checking above if the code is string or integer
+     * @param str
+     * @return
+     */
     private boolean isString(String str) {
         if (str == null || str.trim().isEmpty()) {
             return false;

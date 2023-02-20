@@ -11,6 +11,15 @@ public class registerBookController {
     public Label memberId;
     public Button closeId;
     private String knjiga, memberid;
+
+    /**
+     * When we want to pass information entered in the main window to another
+     * we pass it through constructor
+     * we did that in sample controller on registerAction
+     * @author dbajramovi3
+     * @param knjiga
+     * @param memberid
+     */
     public registerBookController(String knjiga, String memberid){
         this.knjiga = knjiga;
         this.memberid = memberid;
@@ -21,6 +30,9 @@ public class registerBookController {
         stage.close();
     }
 
+    /**
+     *
+     */
     @FXML
     public void initialize(){
         bookId.setText(knjiga);

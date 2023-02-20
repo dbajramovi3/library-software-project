@@ -24,6 +24,11 @@ public class searchMemberController {
         stage.close();
     }
 
+    /**
+     * Same as searchBookController but only for member email
+     * @author dbajramovi3
+     * @param actionEvent
+     */
     public void searchBttnAction(ActionEvent actionEvent) {
         try {
             List<Member> memberList = memberManager.getByName(enterMNameId.getText());
