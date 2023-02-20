@@ -261,7 +261,9 @@ Ovako je to moguce
                     System.out.println("CARD: " + memberCard);
                     shoppingCart.setMember_card_id(memberCard.getId());
                     shoppingCart.setBuy_date(LocalDate.now());
+                    shoppingCart.setBook_id(books.get(0).getId());
                     shoppingCartManager.add(shoppingCart);
+                    System.out.println("KNJIGA IZ SAMPLE KONTROLERA: "+ books.get(0));
                         bookManager.decreaseBookCount(books.get(0));
 
                         Stage stage = new Stage();

@@ -40,6 +40,12 @@ public class BookManager {
         }
     }
 
+    /**
+     * delete method
+     * @param book
+     * @throws LibraryException
+     * @auth
+     */
     public void delete(int book) throws LibraryException {
         try {
             DaoFactory.booksDao().delete(book);
@@ -54,19 +60,17 @@ public class BookManager {
      * @param book
      * @throws LibraryException
      */
-
     public void decreaseBookCount(Book book) throws LibraryException {
+        System.out.println("KNJIGA: " + book);
         int bookCount = book.getCurrent_book_hold();
-        System.out.println(bookCount);
-        if (bookCount <= 0) {
+        System.out.println("book count: " + bookCount);
+            book.setCurrent_book_hold(bookCount - 1);
+            DaoFactory.booksDao().update(book);
+        if (book.getCurrent_book_hold() <= 0) {
             System.out.println("izbrisi knjigu ");
             delete(book.getId());
-        } else {
-            book.setCurrent_book_hold(bookCount - 1);
-            update(book);
-        }
     }
-
+    }
     /**
      * method used in addBookController used to chek if the book already exists so it can throw alert if it does
      * @author dbajramovi3
@@ -74,7 +78,6 @@ public class BookManager {
      * @return
      * @throws LibraryException
      */
-
     public Book getBookByTitle(String title) throws LibraryException {
         try {
             BookDao bookDao = DaoFactory.booksDao();
