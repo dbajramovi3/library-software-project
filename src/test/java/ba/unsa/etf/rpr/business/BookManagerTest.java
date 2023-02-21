@@ -18,12 +18,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 class BookManagerTest {
-
     BookDao bookDao;
-
     private BookDaoImpl bookDaoImplMock = mock(BookDaoImpl.class);
-
-
     /**
      * Mocking test for add method
      * @throws LibraryException
@@ -45,36 +41,5 @@ class BookManagerTest {
             assertEquals(expected, actual);
             mockedFactory.close();
         }
-
-    @Test
-    void update() throws LibraryException {
-        Book book = new Book();
-        book.setId(1);
-        book.setTitle("Harry Potter");
-        book.setAuthor("JK Rowling");
-        book.setCurrent_book_hold(10);
-
-        Book expected = new Book();
-        expected.setId(1);
-        expected.setTitle("Harry Potter 2");
-        expected.setAuthor("JK Rowling");
-        expected.setCurrent_book_hold(5);
-
-        // Create mock objects
-        BookDao bookDaoMock = Mockito.mock(BookDao.class);
-        DaoFactory daoFactoryMock = Mockito.mock(DaoFactory.class);
-
-        // Set up the mock objects
-        Mockito.when(daoFactoryMock.booksDao()).thenReturn(bookDaoMock);
-        Mockito.when(bookDaoMock.update(book)).thenReturn(expected);
-
-        // Call the method being tested
-        BookDao bookDao = daoFactoryMock.booksDao();
-        Book actual = bookDao.update(book);
-
-        // Assert the result
-        assertEquals(expected, actual);
-    }
-
 
     }

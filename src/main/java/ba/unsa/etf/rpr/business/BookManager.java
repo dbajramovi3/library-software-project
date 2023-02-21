@@ -46,7 +46,7 @@ public class BookManager {
     }
     /**
      * update method
-     * @throws LibraryException
+     * @throws LibraryException izuzetak
      * @author dbajramovi3
      */
     public Book update(Book book) throws LibraryException {
