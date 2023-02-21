@@ -66,17 +66,41 @@ Book book = new Book(1, "Harry Potter", "JK Rowling", 10);
 
     @Test
     void setCurrent_book_hold() {
+        Book book = new Book(1,"adad","adad", 13);
+        assertEquals(13, book.getCurrent_book_hold());
     }
 
     @Test
     void testToString() {
+        Book book = new Book(1, "Hobbit", "Dinotelo", 0);
+
+        // Act
+        String result = book.toString();
+
+        // Assert
+        assertEquals("  1   Hobbit   0", result);
     }
 
     @Test
     void testEquals() {
+        Book book1 = new Book(1, "Hobbit", "Dinotelo", 0);
+        Book book2 = new Book(1, "Hobbit", "Dinotelo", 0);
+        Book book3 = new Book(2, "To Kill a Mockingbird", "Harper Lee", 0);
+
+        assertTrue(book1.equals(book2));
+        assertTrue(book2.equals(book1));
+        assertFalse(book1.equals(book3));
+        assertFalse(book3.equals(book1));
+        assertFalse(book2.equals(null));
+        assertFalse(book2.equals("not a book"));
     }
 
     @Test
     void testHashCode() {
+        Book book1 = new Book(1, "Title 1", "Author 1", 0);
+        Book book2 = new Book(1, "Title 1", "Author 1", 0);
+        Book book3 = new Book(2, "Title 2", "Author 2", 1);
+        assertEquals(book1.hashCode(), book2.hashCode());
+        assertNotEquals(book1.hashCode(), book3.hashCode());
     }
 }
