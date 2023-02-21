@@ -85,7 +85,7 @@ public class BookManager {
         if (book.getCurrent_book_hold() <= 0) {
             System.out.println("izbrisi knjigu ");
             delete(book.getId());
-    }
+        }
     }
     /**
      * method used in addBookController used to chek if the book already exists so it can throw alert if it does
