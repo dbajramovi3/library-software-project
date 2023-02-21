@@ -15,6 +15,11 @@ import static org.mockito.Mockito.when;
 
 class MemberManagerTest {
     private MemberDaoImpl memberDaoImplMock = mock(MemberDaoImpl.class);
+    /**
+     * Mocking test for add method
+     * @throws LibraryException
+     * @author dbajramovi3
+     */
     @Test
     void add() throws LibraryException {
         Member member = new Member();
