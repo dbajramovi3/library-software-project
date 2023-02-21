@@ -46,14 +46,22 @@ Book book = new Book(1, "Harry Potter", "JK Rowling", 10);
 
     @Test
     void getAuthor() {
+        Book knjiga = new Book(1,"Hobbit", "amar", 12);
+        assertEquals("amar", knjiga.getAuthor());
     }
 
     @Test
     void setAuthor() {
+        Book book = new Book();
+        book.setAuthor("JK Rowling");
+        assertEquals("JK Rowling", book.getAuthor());
     }
 
     @Test
     void getCurrent_book_hold() {
+        Book book = new Book();
+        book.setCurrent_book_hold(12);
+        assertEquals(12,book.getCurrent_book_hold());
     }
 
     @Test
