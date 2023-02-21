@@ -32,10 +32,16 @@ Book book = new Book(1, "Harry Potter", "JK Rowling", 10);
 
     @Test
     void testGetTitle() {
+        Book knjiga = new Book(1,"Hobbit", "amar", 12);
+        assertEquals("Hobbit", knjiga.getTitle());
+
     }
 
     @Test
     void setTitle() {
+        Book book = new Book();
+        book.setTitle("Avatar");
+        assertEquals("Avatar", book.getTitle());
     }
 
     @Test
