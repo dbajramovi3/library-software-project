@@ -1,6 +1,6 @@
 # Book Reservation System
 
-**Tags:** Java, JavaFX, MySQL, Desktop App, Library Management, CRUD
+**Tags:** Java, JavaFX, MySQL, Desktop App, Library Management, CRUD, DAO
 
 ## Overview
 
